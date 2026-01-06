@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "jewelrySeries": "Jewelry Series",
+    "brandNews": "Happenings",
+    "brandStory": "Brand Story",
+    "memberService": "Services",
+    "contactUs": "Contact Us",
+    "home": "Home"
+  },
+  "home": {
+    "heroTitle": "Hearken to Grace, Let Will Embrace",
+    "brandIntroTitle": "Across the Tapestry of Cultures,\nCountless Faiths Reside, Each a Conduit for Humanity's Myriad Graces.",
+    "brandIntroText1": "Though culture takes myriad forms, its source is but one thought of kindness.",
+    "brandIntroText2": "Though culture takes myriad forms, its essence springs from a single thought of grace. Benzenith embodies this authentic grace through jewelry—making it visible, wearable, and timelessly transmissible. Beauty begins in grace, and finds its home in the heart.",
+    "jewelrySeriesTitle": "BenZenith Jewelry Series",
+    "exploreNow": "Explore Now",
+    "comingSoon": "Coming Soon",
+    "philosophyText": "Among Countless Echoes of Grace,  You Hear the One Your Heart Will Embrace."
+  },
+  "about": {
+    "kicker": "What We Do",
+    "title": "The BenZenith Brand Story",
+    "para1": "BenZenith infuses deep cultural heritage into its designs, reviving traditional symbols through a unique aesthetic lens. Rooted in countless forms of cultural art and inspired by endless virtues and storytelling, the brand creates pieces that resonate profoundly.",
+    "para2": "At the heart of the BenZenith jewelry world is a fresh expression of Eastern cultural themes—showcasing the grandeur and subtlety of Chinese traditional symbolism while building bridges across global cultures. Here, cultural echoes are heard, and personal voices find resonance.",
+    "para3": "By reinterpreting traditional cultural symbols through contemporary design language, BenZenith elevates fine jewelry as a medium for celebrating the beauty of Chinese culture. These creations not only align with modern lifestyle aesthetics but become timeless treasures passed down through generations."
+  },
+  "brandStory": {
+    "heroEyebrow": "BenZenith",
+    "heroTitle": "Brand Story",
+    "heroTagline": "Follow Goodness, Act with Heart",
+    "heroQuote": "The beginning of BenZenith stems from the ancient Eastern philosophers' insight: Goodness is the origin of all creation.",
+    "exploreSeries": "Explore Series",
+    "customDesign": "Bespoke Design",
+    "storyTitle": "The Story's Pulse",
+    "storySubtitle": "Following the path of goodness, from Eastern philosophy to wearable beauty.",
+    "chapter1Kicker": "Prelude | The Origin of Goodness",
+    "chapter1Text": "The beginning of BenZenith stems from the ancient Eastern philosophers' insight: Goodness is the origin of all creation.",
+    "chapter2Kicker": "Genesis | 1940 The Artisan's Brush",
+    "chapter2Year": "1940",
+    "chapter2Text": "In the 29th year of the Republic of China (1940 AD), artisan Gao Lianchang embarked on the path of jade carving. Using Dushan jade as his medium, he crafted treasures that became renowned among the tribes of the Western Regions and the noble families of the Central Plains.",
+    "chapter3Kicker": "Enlightenment | The Shanshan Awakening",
+    "chapter3Text": "As jade and blade merged, and the artisan's soul fused with heaven and earth, Master Gao journeyed to Shanshan in Xinjiang. In the vast expanse of the Gobi Desert, he achieved enlightenment: Goodness is the fundamental way of all things, and the character 'Shan' embodies the meaning of 'listening' — just as noble families inherit a millennium of benevolent thoughts to achieve timeless freedom.",
+    "chapter4Kicker": "Legacy | Freedom Through Goodness",
+    "chapter4Text": "Thereafter, the artisan's successors continued the spirit of 'freedom through goodness,' carrying forward the craft through handmade jewelry in Hong Kong. Through years of refinement, this crystallized into the philosophy of 'Follow Goodness, Act with Heart.' Thus BenZenith was born — reviving ancient cultural heritage through contemporary aesthetics, making jewelry a wearable philosophy, a visible elegance.",
+    "closingQuestion": "How does beauty become eternal?",
+    "closingTitle": "Hearken to Grace, Let Will Embrace.",
+    "closingText": "Where the heart leads, one walks simply; wherever steps reach, all is true realm."
+  },
+  "contact": {
+    "kicker": "Contact Us",
+    "title": "Have Questions? Get in Touch!",
+    "subtitle": "We're here to help and answer any questions you may have",
+    "infoTitle": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "formTitle": "Send a Message",
+    "messagePlaceholder": "How can we help you? Feel free to reach out!",
+    "privacyConsent": "I agree that my data is",
+    "privacyLink": "collected and stored",
+    "submitButton": "Contact Us"
+  },
+  "news": {
+    "title": "Brand News",
+    "search": "Search",
+    "recentPosts": "Recent Posts",
+    "tags": "Tags",
+    "comments": "Comments",
+    "page": "Page"
+  },
+  "category": {
+    "showingResults": "Showing all {{count}} results",
+    "sortLatest": "Sort by latest",
+    "sortPopularity": "Sort by popularity",
+    "sortRating": "Sort by average rating",
+    "sortPriceLow": "Sort by price: low to high",
+    "sortPriceHigh": "Sort by price: high to low",
+    "noProducts": "Products in this series coming soon",
+    "comingSoon": "Stay tuned"
+  },
+  "product": {
+    "inquire": "Book a Consultation",
+    "addToWishlist": "Add to Wishlist",
+    "brandPromise": "Brand Promise",
+    "authenticGuarantee": "Authenticity Guaranteed",
+    "craftExcellence": "Exceptional Craftsmanship",
+    "lifetimeService": "Lifetime Service",
+    "description": "Description",
+    "craftsmanship": "Craftsmanship",
+    "craftsmanshipDesc": "Each piece is meticulously crafted by our master artisans, combining traditional techniques with modern technology to ensure every detail achieves perfection. From material selection to the finished product, dozens of processes of meticulous refinement are required to present this artistic treasure before you.",
+    "relatedProducts": "Related Products"
+  },
+  "quickView": {
+    "viewDetails": "View Full Details",
+    "bookConsultation": "Book Consultation",
+    "close": "Close"
+  },
+  "newsletter": {
+    "title": "Subscribe for Updates!",
+    "placeholder": "Enter your email",
+    "privacyAgree": "I agree to the",
+    "privacyPolicy": "Privacy Policy",
+    "subscribe": "Subscribe"
+  },
+  "footer": {
+    "license": "License: NCM 818500",
+    "followUs": "FOLLOW US"
+  },
+  "series": {
+    "suixinshan": "Fan of Will®",
+    "benzizai": "Suchness of Self®",
+    "tingwanxiang": "Insight of Cosmos®"
+  }
+}

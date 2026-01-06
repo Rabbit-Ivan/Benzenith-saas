@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "jewelrySeries": "珠寶系列",
+    "brandNews": "品牌動態",
+    "brandStory": "品牌故事",
+    "memberService": "會員服務",
+    "contactUs": "聯絡我們",
+    "home": "首頁"
+  },
+  "home": {
+    "heroTitle": "聽從善意 意行隨心",
+    "brandIntroTitle": "文化信仰萬千種，皆為承載萬千善",
+    "brandIntroText1": "文化雖萬象，其源皆為一念善。",
+    "brandIntroText2": "本鄯以珠寶承載這份本真的善意，讓這份善意被看見、被佩戴、被傳承。美源於善，亦歸於心。",
+    "jewelrySeriesTitle": "BenZenith 珠寶系列",
+    "exploreNow": "立即探索",
+    "comingSoon": "敬請期待",
+    "philosophyText": "於萬千善中，你願聽到的便是你之所屬"
+  },
+  "about": {
+    "kicker": "我們做什麼",
+    "title": "本鄯的 品牌歷史",
+    "para1": "BenZenith將深厚的文化底蘊融入其設計中, 通過獨特的美學視角重振傳統符號. 植根於無數形式的文化藝術，並受到無數美德和故事講述的啟發, 該品牌創造出能引起深刻共鳴的單品.",
+    "para2": "BenZenith 珠寶世界的核心是東方文化主題的全新表達——展示中國傳統象徵主義的宏偉和微妙, 同時架起全球文化橋樑. 這裡, 文化的迴聲被聽到, 和個人的聲音找到共鳴.",
+    "para3": "通過當代設計語言重新詮釋傳統文化符號, BenZenith 將高級珠寶提升為頌揚中國文化之美的媒介. 這些創作不僅符合現代生活方式美學，而且成為世代相傳的永恆瑰寶."
+  },
+  "brandStory": {
+    "heroEyebrow": "BenZenith 本鄯",
+    "heroTitle": "品牌故事",
+    "heroTagline": "聽從善意，意行隨心",
+    "heroQuote": "本鄯之始，肇自東方古哲洞見：善者，萬物創造之本源。",
+    "exploreSeries": "探索系列",
+    "customDesign": "高級定制",
+    "storyTitle": "故事之脈",
+    "storySubtitle": "循善意之路，從東方哲思走向可佩之美。",
+    "chapter1Kicker": "序｜善之本源",
+    "chapter1Text": "本鄯之始，肇自東方古哲洞見：善者，萬物創造之本源。",
+    "chapter2Kicker": "起｜1940 匠心起筆",
+    "chapter2Year": "1940",
+    "chapter2Text": "民國廿九年（西元1940年），匠人高連昌結緣藝事，躬身玉雕之道。以獨山玉為媒，琢器成珍，名噪西域諸部、中原世家。",
+    "chapter3Kicker": "悟｜鄯善悟道",
+    "chapter3Text": "玉與刻刀相契，匠魂與天地交融之際，先生遠赴新疆鄯善，於戈壁蒼茫處豁然悟道：善乃萬物本源之道，而「鄯」字所蘊「聆聽」之意，恰如世家大族承千年善念，終得跨越時空之自在。",
+    "chapter4Kicker": "承｜因善而自由",
+    "chapter4Text": "其後，匠門傳人承續「因善而自由」之心念，於香港以手作珠寶承藝弘志。經歲月淬煉，凝為「聽從善意，意行隨心」之哲思。本鄯遂成——以今之美學煥古之文脈，令珠寶為可佩之哲思，可觀之雅韻。",
+    "closingQuestion": "今人問美何以永恆？",
+    "closingTitle": "聽從善意，意行隨心。",
+    "closingText": "心之所向，素履以往；步履所至，皆為真境。"
+  },
+  "contact": {
+    "kicker": "聯繫我們",
+    "title": "有疑問? 聯繫我們!",
+    "subtitle": "我們隨時為您提供幫助和解答任何問題",
+    "infoTitle": "聯絡資訊",
+    "address": "地址",
+    "phone": "電話",
+    "email": "郵箱",
+    "formTitle": "發送訊息",
+    "messagePlaceholder": "我們如何幫助您? 請隨時聯繫我們!",
+    "privacyConsent": "我同意我的數據是",
+    "privacyLink": "收集並儲存",
+    "submitButton": "聯繫我們"
+  },
+  "news": {
+    "title": "品牌動向",
+    "search": "搜尋",
+    "recentPosts": "最近的帖子",
+    "tags": "標籤",
+    "comments": "評論",
+    "page": "頁"
+  },
+  "category": {
+    "showingResults": "顯示全部 {{count}} 個結果",
+    "sortLatest": "按最新排序",
+    "sortPopularity": "按熱門排序",
+    "sortRating": "按評分排序",
+    "sortPriceLow": "按價格：由低到高",
+    "sortPriceHigh": "按價格：由高到低",
+    "noProducts": "此系列產品即將推出",
+    "comingSoon": "敬請期待"
+  },
+  "product": {
+    "inquire": "預約咨詢",
+    "addToWishlist": "加入收藏",
+    "brandPromise": "品牌承諾",
+    "authenticGuarantee": "正品保證",
+    "craftExcellence": "精湛工藝",
+    "lifetimeService": "終身服務",
+    "description": "描述",
+    "craftsmanship": "工藝詳情",
+    "craftsmanshipDesc": "每一件作品都由我們的資深工匠精心打造，採用傳統工藝與現代技術相結合的方式，確保每一個細節都臻於完美。從選材到成品，經過數十道工序的精雕細琢，方能呈現出您眼前的這件藝術珍品。",
+    "relatedProducts": "相關產品"
+  },
+  "quickView": {
+    "viewDetails": "查看完整詳情",
+    "bookConsultation": "預約諮詢",
+    "close": "關閉"
+  },
+  "newsletter": {
+    "title": "訂閱更新!",
+    "placeholder": "輸入您的郵箱",
+    "privacyAgree": "我同意",
+    "privacyPolicy": "隱私政策",
+    "subscribe": "訂閱"
+  },
+  "footer": {
+    "license": "執照: NCM 818500",
+    "followUs": "關注我們"
+  },
+  "series": {
+    "suixinshan": "隨心扇®",
+    "benzizai": "本自在®",
+    "tingwanxiang": "聽萬相®"
+  }
+}

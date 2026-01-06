@@ -1,0 +1,83 @@
+"use client";
+
+import { Instagram, Youtube } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+import LocaleLink from "@/components/benzenith/locale-link";
+
+export default function Footer() {
+  const { t } = useTranslation();
+
+  return (
+    <footer className="bg-footer-bg text-footer-foreground">
+      <div className="container-luxury py-16">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-10 border-b border-white/10">
+          <LocaleLink href="/" className="flex-shrink-0">
+            <img
+              src="/benzenith/assets/logo-light.png"
+              alt="BenZenith"
+              className="h-6 md:h-8 w-auto"
+            />
+          </LocaleLink>
+          <nav className="flex flex-wrap gap-6 md:gap-10">
+            <LocaleLink
+              href="/about"
+              className="text-sm tracking-widest text-footer-foreground hover:text-cream transition-colors uppercase"
+            >
+              {t("nav.memberService")}
+            </LocaleLink>
+            <span className="text-sm tracking-widest text-footer-foreground uppercase cursor-default">
+              {t("footer.followUs")}
+            </span>
+          </nav>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
+          <div>
+            <p className="text-sm text-footer-foreground/70">{t("footer.license")}</p>
+          </div>
+          <div className="text-center">
+            <a
+              href="tel:+18408412568"
+              className="block text-sm text-footer-foreground hover:text-cream transition-colors"
+            >
+              +1840 841 25 68
+            </a>
+            <a
+              href="mailto:info@email.com"
+              className="block text-sm text-footer-foreground hover:text-cream transition-colors mt-1"
+            >
+              info@email.com
+            </a>
+          </div>
+          <div className="flex gap-4 md:justify-end">
+            <a
+              href="https://www.instagram.com/benzenithhk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-footer-foreground hover:text-cream transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://youtube.com/@benzenith-jewelry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-footer-foreground hover:text-cream transition-colors"
+              aria-label="YouTube"
+            >
+              <Youtube className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-white/10 text-center">
+          <p className="text-xs text-footer-foreground/50">
+            © {new Date().getFullYear()} BenZenith. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

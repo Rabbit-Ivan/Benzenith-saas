@@ -1,3 +1,5 @@
 export * from './types'
 export * from './en'
-export * from './zh-CN' 
+export * from './ja'
+export * from './zh-CN'
+export * from './zh-TW'

@@ -1,30 +1,39 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from 'geist/font/sans';
 
 import "../globals.css";
 import { i18n } from '../i18n-config';
 import { use } from 'react';
 import { Toaster } from "@/components/ui/sonner"
-import { translations } from "@libs/i18n";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeScript } from "@/components/theme-script";
 
+const metadataByLocale: Record<
+  string,
+  {
+    title: string;
+    description: string;
+  }
+> = {
+  en: {
+    title: "BenZenith",
+    description: "Listen to kindness, let intention shape the heart.",
+  },
+};
 
 export async function generateViewport({ params }: { params: Promise<{ lang: string }> }): Promise<Viewport> {
   return {
-    themeColor: '#3b82f6',
+    themeColor: "#0b0b0b",
   };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const t = translations[lang as keyof typeof translations];
+  const metadata = metadataByLocale[lang] || metadataByLocale.en;
   
   return {
     metadataBase: new URL(process.env.APP_BASE_URL || 'http://localhost:7001'),
-    title: t.home.metadata.title,
-    description: t.home.metadata.description,
-    keywords: t.home.metadata.keywords,
+    title: metadata.title,
+    description: metadata.description,
     icons: {
       icon: [
         { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -44,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     appleWebApp: {
       capable: true,
       statusBarStyle: 'default',
-      title: t.home.metadata.title,
+      title: metadata.title,
     },
     other: {
       'msapplication-TileColor': '#3b82f6',
@@ -54,22 +63,22 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       type: 'website',
       locale: lang,
-      siteName: t.home.metadata.title,
-      title: t.home.metadata.title,
-      description: t.home.metadata.description,
+      siteName: metadata.title,
+      title: metadata.title,
+      description: metadata.description,
       images: [
         {
           url: '/android-chrome-512x512.png',
           width: 512,
           height: 512,
-          alt: t.home.metadata.title,
+          alt: metadata.title,
         },
       ],
     },
     twitter: {
       card: 'summary',
-      title: t.home.metadata.title,
-      description: t.home.metadata.description,
+      title: metadata.title,
+      description: metadata.description,
       images: ['/android-chrome-512x512.png'],
     },
   };
@@ -91,9 +100,13 @@ export default function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap"
+        />
         <ThemeScript />
       </head>
-      <body className={`${GeistSans.className} antialiased`}>
+      <body className="antialiased">
         <ThemeProvider>
           {children}
           <Toaster />

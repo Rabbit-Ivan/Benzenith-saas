@@ -1,14 +1,15 @@
-import Header from "@/components/global-header";
+import type { ReactNode } from "react";
+
+import BenzenithI18nProvider from "@/components/benzenith/benzenith-i18n-provider";
 
 export default function RootLayout({
   children,
+  params,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
+  params: { lang: string };
 }) {
   return (
-    <>
-      <Header />
-      <main>{children}</main>
-    </>
+    <BenzenithI18nProvider lang={params.lang}>{children}</BenzenithI18nProvider>
   );
 } 

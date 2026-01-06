@@ -1,10 +1,10 @@
-import { en, zhCN } from './locales'
+import { en, ja, zhCN, zhTW } from './locales'
 
 // Re-export from config for consistency
 export { config } from '@config'
 
 export const defaultLocale = 'en'
-export const locales = ['en', 'zh-CN'] as const
+export const locales = ['zh-TW', 'zh-CN', 'ja', 'en'] as const
 
 export type SupportedLocale = typeof locales[number]
 
@@ -12,8 +12,10 @@ export type SupportedLocale = typeof locales[number]
 export type Translations = typeof en
 
 export const translations = {
-  en,
-  'zh-CN': zhCN
+  'zh-TW': zhTW,
+  'zh-CN': zhCN,
+  ja,
+  en
 } as const
 
 export function isValidLocale(locale: string): locale is SupportedLocale {

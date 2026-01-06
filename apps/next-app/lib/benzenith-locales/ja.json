@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "jewelrySeries": "ジュエリーシリーズ",
+    "brandNews": "最新情報",
+    "brandStory": "ブランドストーリー",
+    "memberService": "会員サービス",
+    "contactUs": "お問い合わせ",
+    "home": "ホーム"
+  },
+  "home": {
+    "heroTitle": "善意に従い 心のままに",
+    "brandIntroTitle": "千の文化と信仰、すべては千の善を運ぶため",
+    "brandIntroText1": "文化は万象なれど、その源は一念の善なり。",
+    "brandIntroText2": "BenZenithはジュエリーにこの純粋な善意を込め、その善意を見せ、身につけ、受け継いでいきます。美は善から生まれ、心に帰る。",
+    "jewelrySeriesTitle": "BenZenith ジュエリーシリーズ",
+    "exploreNow": "今すぐ探索",
+    "comingSoon": "近日公開",
+    "philosophyText": "無数の善の中で、あなたが聴きたいものこそ、あなたの居場所"
+  },
+  "about": {
+    "kicker": "私たちの使命",
+    "title": "BenZenithの ブランドストーリー",
+    "para1": "BenZenithは深い文化的背景をデザインに融合させ、独自の美的視点で伝統的なシンボルを復活させています。無数の文化芸術に根ざし、無数の美徳と物語に触発され、深い共鳴を呼び起こす作品を創造しています。",
+    "para2": "BenZenithジュエリーの核心は、東洋文化テーマの全く新しい表現です——中国伝統象徴主義の壮大さと繊細さを示しながら、グローバルな文化の架け橋となります。ここでは、文化の響きが聞こえ、個人の声が共鳴を見つけます。",
+    "para3": "現代的なデザイン言語で伝統文化のシンボルを再解釈し、BenZenithは高級ジュエリーを中国文化の美を称える媒体へと昇華させました。これらの創作は現代のライフスタイル美学に適合するだけでなく、世代を超えて受け継がれる永遠の宝物となります。"
+  },
+  "brandStory": {
+    "heroEyebrow": "BenZenith 本鄯",
+    "heroTitle": "ブランドストーリー",
+    "heroTagline": "善意に従い、心のままに",
+    "heroQuote": "本鄯の始まりは、東洋の古代哲学者の洞察に由来する：善とは、万物創造の源である。",
+    "exploreSeries": "シリーズを探す",
+    "customDesign": "オーダーメイド",
+    "storyTitle": "物語の源流",
+    "storySubtitle": "善意の道を辿り、東洋哲学から身につける美へ。",
+    "chapter1Kicker": "序｜善の源",
+    "chapter1Text": "本鄯の始まりは、東洋の古代哲学者の洞察に由来する：善とは、万物創造の源である。",
+    "chapter2Kicker": "起｜1940 匠の筆始め",
+    "chapter2Year": "1940",
+    "chapter2Text": "民国29年（西暦1940年）、職人・高連昌は芸術と縁を結び、玉彫の道に身を捧げた。独山玉を媒介として、器を珍宝に彫り上げ、西域の諸部族や中原の名家に名を馳せた。",
+    "chapter3Kicker": "悟｜鄯善での悟り",
+    "chapter3Text": "玉と刻刀が相まり、匠の魂と天地が融合する中、先生は新疆鄯善へ遠征し、戈壁の荒涼とした地で悟りを開いた：善とは万物の本源の道であり、「鄯」の字に秘められた「傾聴」の意は、名門大族が千年の善念を受け継ぎ、時空を超えた自在を得るように。",
+    "chapter4Kicker": "承｜善による自由",
+    "chapter4Text": "その後、匠門の伝承者は「善による自由」の心念を継承し、香港で手作りジュエリーによって技を継ぎ志を広めた。歳月を経て、「善意に従い、心のままに」という哲学へと凝縮された。本鄯はここに成る——現代の美学で古の文脈を甦らせ、ジュエリーを身につける哲学、観る雅韻とした。",
+    "closingQuestion": "今の人は問う、美は何故永遠か？",
+    "closingTitle": "善意に従い、心のままに。",
+    "closingText": "心の向かう所、素足で歩む；歩みの至る所、すべて真境。"
+  },
+  "contact": {
+    "kicker": "お問い合わせ",
+    "title": "ご質問がありますか？",
+    "subtitle": "いつでもお手伝いし、ご質問にお答えします",
+    "infoTitle": "連絡先情報",
+    "address": "住所",
+    "phone": "電話",
+    "email": "メール",
+    "formTitle": "メッセージを送る",
+    "messagePlaceholder": "どのようにお手伝いできますか？お気軽にご連絡ください！",
+    "privacyConsent": "私のデータが",
+    "privacyLink": "収集・保存されることに同意します",
+    "submitButton": "お問い合わせ"
+  },
+  "news": {
+    "title": "ブランドニュース",
+    "search": "検索",
+    "recentPosts": "最近の投稿",
+    "tags": "タグ",
+    "comments": "コメント",
+    "page": "ページ"
+  },
+  "category": {
+    "showingResults": "全 {{count}} 件を表示",
+    "sortLatest": "新着順",
+    "sortPopularity": "人気順",
+    "sortRating": "評価順",
+    "sortPriceLow": "価格：安い順",
+    "sortPriceHigh": "価格：高い順",
+    "noProducts": "このシリーズの製品は近日公開予定です",
+    "comingSoon": "お楽しみに"
+  },
+  "product": {
+    "inquire": "ご予約・お問い合わせ",
+    "addToWishlist": "ウィッシュリストに追加",
+    "brandPromise": "ブランド保証",
+    "authenticGuarantee": "正規品保証",
+    "craftExcellence": "卓越した職人技",
+    "lifetimeService": "生涯サービス",
+    "description": "説明",
+    "craftsmanship": "職人技",
+    "craftsmanshipDesc": "各作品は熟練の職人によって丹念に作られ、伝統的な技術と現代の技術を組み合わせて、すべての細部が完璧を達成することを保証します。素材の選択から完成品まで、数十の工程を経て丁寧に仕上げられ、この芸術的な逸品をお届けします。",
+    "relatedProducts": "関連商品"
+  },
+  "quickView": {
+    "viewDetails": "詳細を見る",
+    "bookConsultation": "ご相談予約",
+    "close": "閉じる"
+  },
+  "newsletter": {
+    "title": "最新情報を受け取る！",
+    "placeholder": "メールアドレスを入力",
+    "privacyAgree": "同意します",
+    "privacyPolicy": "プライバシーポリシー",
+    "subscribe": "登録する"
+  },
+  "footer": {
+    "license": "ライセンス: NCM 818500",
+    "followUs": "フォローする"
+  },
+  "series": {
+    "suixinshan": "随心扇®",
+    "benzizai": "本自在®",
+    "tingwanxiang": "聴万相®"
+  }
+}

@@ -146,13 +146,13 @@ export const config = {
     i18n: {
       /**
        * Default locale
-       * @type {'en' | 'zh-CN'}
+       * @type {'en' | 'zh-CN' | 'zh-TW' | 'ja'}
        */
-      defaultLocale: 'zh-CN' as const,
+      defaultLocale: 'zh-TW' as const,
       /**
        * Available locales
        */
-      locales: ['en', 'zh-CN'] as const,
+      locales: ['zh-TW', 'zh-CN', 'ja', 'en'] as const,
       /**
        * Cookie key for locale persistence
        * Used by both Next.js middleware and Nuxt.js i18n module
