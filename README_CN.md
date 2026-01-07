@@ -1,126 +1,105 @@
-# ShipEasy
+# Benzenith 官方网站
 
-🚀 一个现代化的、功能完备的 monorepo 起始套件，专为构建 SaaS 应用设计，同时支持国内和国际市场。
+**中文** | [English](./README_EN.md)
 
-## ✨ 核心特性
+![Build Status](https://github.com/vikingmute/tinyship/actions/workflows/ci.yml/badge.svg)
 
-### 🏗️ 现代化架构
-- **灵活的 Monorepo 结构**：使用 `libs` 共享代码，避免复杂的 packages 配置
-- **双框架支持**：
-  - 为 React 开发者提供 Next.js
-  - 为 Vue 开发者提供 Nuxt.js
-  - 选择你熟悉的框架，享受相同的强大后端支持
+✨ Benzenith 高端珠宝品牌官方网站，基于 Next.js 构建的现代化企业级展示平台。
 
-### 🔐 全面的身份认证
-- **[Better-Auth](https://www.better-auth.com/) 集成**：
-  - 邮箱/密码认证
-  - 手机号验证与 OTP
-  - 多因素认证 (2FA)
-  - 会话管理
-  - 账号关联
-- **多种 OAuth 提供商**：
-  - Google 登录
-  - GitHub 登录
-  - 微信登录
-  - 易于扩展更多登录方式
+## 📑 目录
 
-### 🌐 全球化支持
-- **国际化支持**：
-  - 内置 i18n 支持
-  - 多语言 UI 和邮件模板
-  - 区域特定集成
-- **支付解决方案**：
-  - Stripe 支持全球支付
-  - 微信支付接入
-  - Creem 支付集成
+- [🏢 关于 Benzenith](#-关于-benzenith)
+- [🚀 快速开始](#-快速开始)
+- [📁 项目结构](#-项目结构)
+- [🌐 页面路由](#-页面路由)
+- [✨ 核心特性](#-核心特性)
+- [📦 技术栈](#-技术栈)
+- [🌐 国际化支持](#-国际化支持)
+- [📖 开发指南](#-开发指南)
 
-### 📱 通信服务
-- **邮件服务**：
-  - 多提供商支持 (Resend, SendGrid, SMTP)
-  - 模板化邮件
-  - 本地化内容
-- **短信集成**：
-  - 国际提供商 (Twilio)
-  - 国内提供商 (阿里云)
-  - OTP 和通知支持
+## 🏢 关于 Benzenith
 
-### 🎨 现代化 UI/UX
-- **丰富的组件库**：
-  - Next.js 使用 [shadcn/ui](https://ui.shadcn.com/)
-  - Nuxt.js 使用 [Magic UI](https://www.magicui.design/)
-- **样式方案**：
-  - Tailwind CSS 实用优先的样式系统
-  - 一致的设计系统
-- **内置管理后台**：
-  - 用户管理
-  - 内容管理
-  - 数据分析
-
-### 💪 核心功能
-- **基于 Zod 的类型安全验证**：
-  - 全应用的 Schema 验证
-  - 与 TypeScript 集成的运行时类型检查
-  - API 请求/响应验证
-  - 表单验证与详细错误提示
-  - 自定义验证规则
-  - 自动 TypeScript 类型推断
-- **高级授权系统**：
-  - 基于角色的访问控制 (RBAC)
-  - 细粒度权限管理
-  - 动态策略管理
-  - 资源级别访问控制
-  - 基于 CASL 的灵活权限规则
-
-### 🤖 AI 集成
-- **AI 服务**：
-  - Vercel AI SDK 集成
-  - 多 AI 提供商支持
-  - 易于扩展的自定义 AI 功能
-
-### 🧠 AI 开发就绪
-- **Cursor 集成**：
-  - 内置 Cursor 规则，支持 AI 辅助开发
-  - 智能代码导航和补全
-  - 上下文感知的 AI 建议
-- **AI 优先开发**：
-  - 结构化的代码库，便于 AI 理解
-  - 完整的 AI 工具文档
-  - 预置的提示和模板
-- **增强开发体验**：
-  - AI 辅助快速理解项目
-  - 加速功能开发
-  - 智能代码重构
+Benzenith 是一个高端珠宝品牌，致力于将精湛工艺与现代设计融合。本项目用于品牌展示与会员体系建设，不包含支付功能。
 
 ## 🚀 快速开始
 
-详细的设置说明和配置指南，请参考我们的[启动指南](./docs/user-guide/overview.md)。
+详细的安装说明和配置指南，请参阅我们的[开始指南](./docs/user-guide/overview.md)。
+
+## 📁 项目结构
+
+```text
+tinyship/
+├── apps/
+│   ├── next-app/          # 官网主应用
+│   │   ├── app/[lang]/    # 国际化路由
+│   │   │   ├── (auth)/    # 会员认证相关页面
+│   │   │   ├── (root)/    # 官网展示页面
+│   │   │   └── admin/     # 内部后台（会员管理）
+│   │   ├── components/    # UI 组件
+│   │   └── public/        # 静态资源
+│   └── docs-app/          # 文档站点（可选）
+├── libs/                  # 共享代码库
+└── docs/                  # 项目文档
+```
+
+## 🌐 页面路由
+
+### 🌐 官网页面
+
+| 路由 | 说明 |
+|------|------|
+| `/` | 首页 |
+| `/brand-story` | 品牌故事 |
+| `/category` | 产品分类 |
+| `/product/[productId]` | 产品详情 |
+| `/news` | 新闻动态 |
+| `/contact` | 联系我们 |
+
+### 🔐 会员系统
+
+| 路由 | 说明 |
+|------|------|
+| `/signin` | 会员登录 |
+| `/signup` | 会员注册 |
+| `/admin/*` | 内部后台（会员管理） |
+
+> 会员系统的前台页面与后台管理功能，待补充 PRD 后再细化到 README。
+
+## ✨ 核心特性
+
+### 🎨 品牌展示
+- 精美的产品展示页面
+- 品牌故事与新闻动态
+- 多语言内容管理
+
+### 🔐 会员系统
+- Better-Auth 集成
+- 邮箱/密码登录
+- 社交登录（Google、GitHub、微信）
+- 会员信息管理（具体以补充 PRD 为准）
+
+### 📊 CRM 会员管理后台
+- 会员管理（内部人员使用）
+- 内容管理
+- 数据分析
+
+### 🌐 国际化支持
+- 多语言支持（中/繁/英/日）
+- 基于路由的区域化内容
 
 ## 📦 技术栈
 
-### 前端
-- Next.js/Nuxt.js
+- Next.js
 - TypeScript
 - Tailwind CSS
-- shadcn/ui 与 Magic UI
-- [Zod](https://zod.dev/) 端到端类型安全
-
-### 后端
 - Better-Auth
-- CASL 权限管理
-- PostgreSQL
-- Drizzle ORM
+- PostgreSQL + Drizzle ORM
+- shadcn/ui
 
-### 服务
-- 邮件 (Resend/SendGrid/SMTP)
-- 短信 (阿里云/Twilio)
-- 支付 (Stripe/微信支付/Creem)
-- AI 集成
+## 🌐 国际化支持
 
-## 🌟 为什么选择 ShipEasy？
+项目采用路由级国际化设计，统一通过 `[lang]` 进行语言切换，便于全球站点内容管理与扩展。
 
-1. **快速启动**：几分钟内即可启动你的 SaaS 应用
-2. **最佳实践**：采用现代工具和模式构建
-3. **全球本地化**：同时支持国际和中国市场需求
-4. **框架自由**：选择 React 或 Vue，保持所有强大特性
-5. **生产就绪**：内置企业级安全和可扩展性
-6. **AI 驱动开发**：通过 Cursor 和 AI 工具提供增强的开发体验
+## 📖 开发指南
+
+更多开发说明请参考项目文档：[docs/user-guide/overview.md](./docs/user-guide/overview.md)。

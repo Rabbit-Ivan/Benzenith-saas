@@ -306,6 +306,15 @@ export default function CategoryPage() {
     return name;
   };
 
+  const getProductSubtitle = (product: (typeof products)[0]) => {
+    if (i18n.language === "en") return product.subtitleEn;
+    if (i18n.language === "zh-CN") return product.subtitleZhCN;
+    if (i18n.language === "ja") return product.subtitleJa;
+    return product.subtitleCn;
+  };
+
+  const isEnglish = i18n.language === "en";
+
   if (!categoryId) {
     return (
       <Layout>
@@ -320,98 +329,87 @@ export default function CategoryPage() {
     <Layout>
       <section className="section-padding bg-cream">
         <div className="container-luxury">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-serif font-light text-charcoal mb-4">
-                {renderCategoryName()}
-              </h1>
-              <p className="text-sm text-warm-gray">
-                {t("category.showingResults", { count: filteredProducts.length })}
-              </p>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
-              <span className="text-warm-gray">{t("category.sortLatest")}</span>
-              <select className="bg-transparent border border-border px-3 py-2 text-sm text-charcoal focus:outline-none">
-                <option>{t("category.sortLatest")}</option>
-                <option>{t("category.sortPopularity")}</option>
-                <option>{t("category.sortRating")}</option>
-                <option>{t("category.sortPriceLow")}</option>
-                <option>{t("category.sortPriceHigh")}</option>
-              </select>
-            </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-charcoal leading-tight">
+              {renderCategoryName()}
+            </h1>
           </div>
         </div>
       </section>
 
       <section className="section-padding bg-background">
         <div className="container-luxury">
-          {filteredProducts.length === 0 ? (
-            <div className="text-center py-20">
-              <h2 className="text-2xl font-serif text-charcoal mb-4">
-                {t("category.noProducts")}
-              </h2>
-              <p className="text-warm-gray">{t("category.comingSoon")}</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
+            <p className="text-sm text-warm-gray">
+              {t("category.showingResults", { count: filteredProducts.length })}
+            </p>
+            <select className="px-4 py-2 bg-cream border border-border text-sm text-charcoal focus:outline-none focus:border-gold">
+              <option>{t("category.sortLatest")}</option>
+              <option>{t("category.sortPopularity")}</option>
+              <option>{t("category.sortRating")}</option>
+              <option>{t("category.sortPriceLow")}</option>
+              <option>{t("category.sortPriceHigh")}</option>
+            </select>
+          </div>
+
+          {filteredProducts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {filteredProducts.map((product, index) => (
                 <div
                   key={product.id}
                   className="group opacity-0 animate-fade-in-up"
                   style={{ animationDelay: `${0.1 + index * 0.1}s` }}
                 >
-                  <div className="relative overflow-hidden aspect-[4/5] mb-6 border border-transparent group-hover:border-gold/40 transition-all duration-500">
+                  <div className="relative overflow-hidden aspect-square mb-4 shadow-md hover:shadow-xl transition-shadow duration-500 rounded-sm">
                     <LocaleLink href={`/product/${product.id}`}>
                       <img
                         src={product.image}
-                        alt={getProductName(product)}
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                        alt={isEnglish ? product.name : product.nameCn}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                     </LocaleLink>
-                    <div className="absolute top-4 right-4 flex flex-col gap-2">
-                      <button className="w-10 h-10 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-cream transition-colors">
-                        <Heart className="w-4 h-4" />
-                      </button>
-                      <button
-                        onClick={() => handleQuickView(product)}
-                        className="w-10 h-10 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-cream transition-colors"
-                      >
-                        <Eye className="w-4 h-4" />
-                      </button>
+                    <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <div className="flex gap-3">
+                        <button
+                          onClick={(event) => {
+                            event.preventDefault();
+                            handleQuickView(product);
+                          }}
+                          className="w-10 h-10 bg-background rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-cream transition-colors"
+                          title="Quick View"
+                        >
+                          <Eye className="w-4 h-4" />
+                        </button>
+                        <button
+                          className="w-10 h-10 bg-background rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-cream transition-colors"
+                          title="Add to Wishlist"
+                        >
+                          <Heart className="w-4 h-4" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-xl font-serif text-charcoal mb-2">
-                      <LocaleLink href={`/product/${product.id}`}>
+                  <div className="text-center space-y-1">
+                    <LocaleLink href={`/product/${product.id}`}>
+                      <h3 className="text-base font-serif font-medium text-charcoal group-hover:text-gold transition-colors">
                         {renderProductName(product)}
-                      </LocaleLink>
-                    </h3>
-                    <p className="text-xs text-warm-gray tracking-wide">
-                      {i18n.language === "en"
-                        ? product.subtitleEn
-                        : i18n.language === "zh-CN"
-                          ? product.subtitleZhCN
-                          : i18n.language === "ja"
-                            ? product.subtitleJa
-                            : product.subtitleCn}
-                    </p>
+                      </h3>
+                    </LocaleLink>
+                    {getProductSubtitle(product) && (
+                      <p className="text-xs text-warm-gray tracking-wide">
+                        {getProductSubtitle(product)}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
+          ) : (
+            <div className="text-center py-20">
+              <p className="text-lg text-warm-gray mb-4">{t("category.noProducts")}</p>
+              <p className="text-sm text-muted-foreground">{t("category.comingSoon")}</p>
+            </div>
           )}
-
-          <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <p className="text-lg text-warm-gray mb-4 md:mb-0">
-              {t("category.comingSoon")}
-            </p>
-            <LocaleLink
-              href="/contact"
-              className="luxury-button inline-flex items-center gap-2"
-            >
-              {t("product.inquire")}
-            </LocaleLink>
-          </div>
         </div>
       </section>
 
