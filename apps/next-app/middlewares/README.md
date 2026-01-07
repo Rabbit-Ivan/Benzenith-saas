@@ -1,6 +1,6 @@
 # Middleware Functions
 
-This directory contains individual middleware functions used by the main `src/middleware.ts` file to handle specific request processing tasks before the request reaches the page or API route handler.
+This directory contains individual middleware functions used by the main `proxy.ts` file to handle specific request processing tasks before the request reaches the page or API route handler.
 
 ## Files
 
@@ -32,4 +32,4 @@ This directory contains individual middleware functions used by the main `src/mi
 
 ## Orchestration
 
-These individual middleware functions are imported and called sequentially by the main `src/middleware.ts` file. The main file also handles skipping middleware execution for static assets (`_next`, `images`, files with extensions) and defines the overall `matcher` config for Next.js. 
+These individual middleware functions are imported and called sequentially by the main `proxy.ts` file. The main file also handles skipping middleware execution for static assets (`_next`, `images`, files with extensions) and defines the overall `matcher` config for Next.js. 

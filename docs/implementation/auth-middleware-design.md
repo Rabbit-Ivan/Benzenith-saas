@@ -60,7 +60,7 @@ flowchart TD
 
 | 特性 | Next.js | Nuxt.js |
 |------|---------|---------|
-| **实现方式** | 中间件 (middleware.ts) | 路由中间件 + 服务器中间件 |
+| **实现方式** | 中间件 (proxy.ts) | 路由中间件 + 服务器中间件 |
 | **执行时机** | 请求级别 | 页面级别 + API级别 |
 | **性能优化** | 边缘计算支持 | 服务端渲染优化 |
 | **配置文件** | `authMiddleware.ts` | `auth.global.ts` + `permissions.ts` |
@@ -71,7 +71,7 @@ flowchart TD
 
 ```bash
 apps/next-app/
-├── middleware.ts                 # 主中间件入口
+├── proxy.ts                      # 主中间件入口
 └── middlewares/
     ├── authMiddleware.ts        # 认证逻辑
     ├── localeMiddleware.ts      # 国际化处理
@@ -79,7 +79,7 @@ apps/next-app/
 
 ### 工作流程
 
-1. **请求拦截** - `middleware.ts` 拦截所有页面请求
+1. **请求拦截** - `proxy.ts` 拦截所有页面请求
 2. **路由匹配** - 检查是否为保护路由
 3. **身份验证** - 使用 Better Auth 验证用户会话
 4. **权限检查** - 基于 RBAC 系统验证用户权限

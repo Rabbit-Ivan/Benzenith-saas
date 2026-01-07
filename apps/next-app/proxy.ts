@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 import { localeMiddleware } from './middlewares/localeMiddleware';
 import { authMiddleware } from './middlewares/authMiddleware';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const startTime = Date.now();
   const pathname = request.nextUrl.pathname;
 
@@ -43,7 +43,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  runtime: 'nodejs',
   // Matcher包含API路径以便进行权限检查，以及auth路径以便重定向已登录用户
   matcher: [
     // Skip all internal paths (_next) but include API routes for auth check and auth pages for redirect
