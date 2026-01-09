@@ -348,6 +348,24 @@ export const config = {
               '所有高级功能',
               '优先支持'
             ]
+          },
+          'zh-TW': {
+            name: '微信支付月度',
+            description: '透過微信支付的月度一次性支付',
+            duration: '月',
+            features: [
+              '所有高級功能',
+              '優先支援'
+            ]
+          },
+          'ja': {
+            name: 'WeChat 月額プラン',
+            description: 'WeChat Payによる月額一括払い',
+            duration: '月',
+            features: [
+              'すべてのプレミアム機能',
+              '優先サポート'
+            ]
           }
         }
       },
@@ -381,6 +399,24 @@ export const config = {
               '所有高级功能',
               '优先支持'
             ]
+          },
+          'zh-TW': {
+            name: 'Stripe 月度訂閱',
+            description: '透過 Stripe 的月度循環訂閱',
+            duration: '月',
+            features: [
+              '所有高級功能',
+              '優先支援'
+            ]
+          },
+          'ja': {
+            name: 'Stripe 月額プラン',
+            description: 'Stripeの月額定期購読',
+            duration: '月',
+            features: [
+              'すべてのプレミアム機能',
+              '優先サポート'
+            ]
           }
         }
       },
@@ -413,6 +449,26 @@ export const config = {
               '所有高级功能',
               '优先支持',
               '终身免费更新'
+            ]
+          },
+          'zh-TW': {
+            name: 'Stripe 月度專業版',
+            description: '高價位的月度專業訂閱',
+            duration: '月',
+            features: [
+              '所有高級功能',
+              '優先支援',
+              '終身免費更新'
+            ]
+          },
+          'ja': {
+            name: 'Stripe 月額プロプラン',
+            description: '高価格の月額プレミアム購読',
+            duration: '月',
+            features: [
+              'すべてのプレミアム機能',
+              '優先サポート',
+              '生涯無料アップデート'
             ]
           }
         }
@@ -448,6 +504,26 @@ export const config = {
               '优先支持',
               '终身免费更新'
             ]
+          },
+          'zh-TW': {
+            name: 'Stripe 終身會員',
+            description: '一次性付費永久訪問',
+            duration: '終身',
+            features: [
+              '所有高級功能',
+              '優先支援',
+              '終身免費更新'
+            ]
+          },
+          'ja': {
+            name: 'Stripe ライフタイム',
+            description: '永久アクセスのための一括払い',
+            duration: 'ライフタイム',
+            features: [
+              'すべてのプレミアム機能',
+              '優先サポート',
+              '生涯無料アップデート'
+            ]
           }
         }
       },
@@ -479,6 +555,24 @@ export const config = {
               '所有高级功能',
               '优先支持'
             ]
+          },
+          'zh-TW': {
+            name: 'Creem 月度訂閱',
+            description: '透過Creem的月度循環訂閱',
+            duration: '月',
+            features: [
+              '所有高級功能',
+              '優先支援'
+            ]
+          },
+          'ja': {
+            name: 'Creem 月額プラン',
+            description: 'Creemの月額定期購読',
+            duration: '月',
+            features: [
+              'すべてのプレミアム機能',
+              '優先サポート'
+            ]
           }
         }
       },
@@ -509,6 +603,24 @@ export const config = {
             features: [
               '所有高级功能',
               '优先支持'
+            ]
+          },
+          'zh-TW': {
+            name: 'Creem 月度訂閱 (一次性)',
+            description: '透過Creem的一次性月度付費',
+            duration: '月',
+            features: [
+              '所有高級功能',
+              '優先支援'
+            ]
+          },
+          'ja': {
+            name: 'Creem 月額プラン（一回払い）',
+            description: 'Creemによる月額アクセスの一回払い',
+            duration: '月',
+            features: [
+              'すべてのプレミアム機能',
+              '優先サポート'
             ]
           }
         }
@@ -543,6 +655,26 @@ export const config = {
               '积分永不过期',
               '按需付费'
             ]
+          },
+          'zh-TW': {
+            name: '100 積分包 Stripe',
+            description: '透過 Stripe 購買的 100 個 AI 積分，按需使用',
+            duration: '一次性',
+            features: [
+              '100 次 AI 對話',
+              '積分永不過期',
+              '按需付費'
+            ]
+          },
+          'ja': {
+            name: '100 クレジット Stripe',
+            description: 'オンデマンド利用のためのAIクレジット100を購入',
+            duration: '一回払い',
+            features: [
+              'AI会話100回',
+              'クレジットは失効しません',
+              '従量課金'
+            ]
           }
         }
       },
@@ -573,6 +705,26 @@ export const config = {
               '550 次 AI 对话 (含 50 赠送)',
               '积分永不过期',
               '最超值套餐'
+            ]
+          },
+          'zh-TW': {
+            name: '500 積分包 + 50 贈送 微信支付',
+            description: '超值優惠！以 500 積分的價格獲得 550 積分',
+            duration: '一次性',
+            features: [
+              '550 次 AI 對話 (含 50 贈送)',
+              '積分永不過期',
+              '最超值套餐'
+            ]
+          },
+          'ja': {
+            name: '500 クレジット + 50 ボーナス WeChat Pay',
+            description: 'お得！500の価格で550クレジット',
+            duration: '一回払い',
+            features: [
+              'AI会話550回（50ボーナス）',
+              'クレジットは失効しません',
+              '最もお得なパッケージ'
             ]
           }
         }
