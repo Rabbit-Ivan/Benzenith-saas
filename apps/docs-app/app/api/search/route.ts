@@ -11,6 +11,9 @@ export const { staticGET: GET } = createFromSource(source, {
   localeMap: {
     en: { language: 'english' },
     'zh-CN': { language: 'english' }, // Use english for Chinese since zh-CN is not supported by Orama
+    'zh-TW': { language: 'english' }, // Traditional Chinese - use english fallback
+    'ja': { language: 'english' },     // Japanese - use english fallback
   },
 });
+
 
