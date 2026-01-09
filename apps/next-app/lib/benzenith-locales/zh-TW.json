@@ -61,7 +61,17 @@
     "messagePlaceholder": "我們如何幫助您? 請隨時聯繫我們!",
     "privacyConsent": "我同意我的數據是",
     "privacyLink": "收集並儲存",
-    "submitButton": "聯繫我們"
+    "submitButton": "聯繫我們",
+    "sectionOneHeadline": "聯繋我們",
+    "sectionOneCopy": "如需任何協助，我們的專家團隊樂意隨時為您解答所有相關問題，包括訂單疑問、售後服務和定制需求等。歡迎與我們聯繫。",
+    "sectionTwoCustomTitle": "高級定制及藏品服務",
+    "sectionTwoCustomCopy": "垂詢高級定制詳情，請聯繫專家開啟藝術收藏。",
+    "sectionTwoSupportTitle": "售後服務預約",
+    "sectionTwoSupportCopy": "選擇您所在的地區，即刻開啟專業珠寶養護預約。",
+    "sectionTwoRegionGreaterChina": "大中華區（中國大陸、港澳台地區）：",
+    "sectionTwoRegionNorthAmerica": "北美區（美國、加拿大）：",
+    "sectionTwoRegionEurope": "歐洲（英國、法國、德國等歐洲國家）：",
+    "sectionTwoRegionAsiaPacific": "亞太（日本、韓國、東南亞、澳洲等）："
   },
   "news": {
     "title": "品牌動向",
@@ -107,7 +117,22 @@
   },
   "footer": {
     "license": "執照: NCM 818500",
-    "followUs": "關注我們"
+    "followUs": "關注我們",
+    "cookieSettings": "Cookie 設定",
+    "businessCoop": "品牌商務合作"
+  },
+  "cookieConsent": {
+    "title": "Cookie 設定",
+    "description": "我們使用 Cookie 以提供更好的網站體驗。您可接受全部或拒絕全部，也可稍後再決定。",
+    "acceptAll": "全部接受",
+    "rejectAll": "全部拒絕",
+    "defer": "稍後決定",
+    "settings": "Cookie 設定",
+    "close": "關閉"
+  },
+  "cookieSettings": {
+    "title": "Cookie 設定",
+    "description": "您可以在此更新 Cookie 同意選擇。"
   },
   "series": {
     "suixinshan": "隨心扇®",

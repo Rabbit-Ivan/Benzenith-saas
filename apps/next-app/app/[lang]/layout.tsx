@@ -6,6 +6,7 @@ import { use } from 'react';
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeScript } from "@/components/theme-script";
+import CookieConsent from "@/components/benzenith/CookieConsent";
 
 const metadataByLocale: Record<
   string,
@@ -109,6 +110,7 @@ export default function RootLayout({
       <body className="antialiased">
         <ThemeProvider>
           {children}
+          <CookieConsent />
           <Toaster />
         </ThemeProvider>
       </body>

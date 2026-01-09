@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import Layout from "@/components/benzenith/layout/Layout";
@@ -29,35 +29,106 @@ export default function ContactPage() {
 
       <section className="section-padding bg-background">
         <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="overflow-hidden bg-secondary">
+              <img
+                src="/benzenith/assets/contact/contact-section-1.png"
+                alt={t("contact.sectionOneHeadline")}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-light text-charcoal">
+                {t("contact.sectionOneHeadline")}
+              </h2>
+              <p className="text-lg text-warm-gray font-light leading-relaxed">
+                {t("contact.sectionOneCopy")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-cream">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-serif font-light text-charcoal">
+                  {t("contact.sectionTwoCustomTitle")}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {t("contact.sectionTwoCustomCopy")}{" "}
+                  <a
+                    href="mailto:concierge@benzenith.com"
+                    className="text-gold hover:underline"
+                  >
+                    concierge@benzenith.com
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-serif font-light text-charcoal">
+                  {t("contact.sectionTwoSupportTitle")}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {t("contact.sectionTwoSupportCopy")}
+                </p>
+              </div>
+              <div className="space-y-3 text-warm-gray">
+                <p>
+                  {t("contact.sectionTwoRegionGreaterChina")}{" "}
+                  <a
+                    href="mailto:csgc@benzenith.com"
+                    className="text-gold hover:underline"
+                  >
+                    csgc@benzenith.com
+                  </a>
+                </p>
+                <p>
+                  {t("contact.sectionTwoRegionNorthAmerica")}{" "}
+                  <a
+                    href="mailto:csna@benzenith.com"
+                    className="text-gold hover:underline"
+                  >
+                    csna@benzenith.com
+                  </a>
+                </p>
+                <p>
+                  {t("contact.sectionTwoRegionEurope")}{" "}
+                  <a
+                    href="mailto:cseu@benzenith.com"
+                    className="text-gold hover:underline"
+                  >
+                    cseu@benzenith.com
+                  </a>
+                </p>
+                <p>
+                  {t("contact.sectionTwoRegionAsiaPacific")}{" "}
+                  <a
+                    href="mailto:csap@benzenith.com"
+                    className="text-gold hover:underline"
+                  >
+                    csap@benzenith.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-background">
+        <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-2xl font-serif font-light text-charcoal mb-10">
                 {t("contact.infoTitle")}
               </h2>
               <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-medium text-charcoal mb-1">
-                      {t("contact.address")}
-                    </h3>
-                    <p className="text-warm-gray">785 15h街, 辦公室 478 柏林</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-medium text-charcoal mb-1">
-                      {t("contact.phone")}
-                    </h3>
-                    <a
-                      href="tel:+18408412569"
-                      className="text-warm-gray hover:text-gold transition-colors"
-                    >
-                      +1 840 841 25 69
-                    </a>
-                  </div>
-                </div>
                 <div className="flex items-start gap-4">
                   <Mail className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
                   <div>
@@ -72,19 +143,6 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-12 aspect-video bg-secondary overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.5871673694655!2d13.404953576755096!3d52.52000907981102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin%2C%20Germany!5e0!3m2!1sen!2sus!4v1703686400000!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Location Map"
-                />
               </div>
             </div>
 

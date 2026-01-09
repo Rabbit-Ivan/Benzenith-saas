@@ -26,6 +26,18 @@ export default function Footer() {
             >
               {t("nav.memberService")}
             </LocaleLink>
+            <LocaleLink
+              href="/contact"
+              className="text-sm tracking-widest text-footer-foreground hover:text-cream transition-colors uppercase"
+            >
+              {t("nav.contactUs")}
+            </LocaleLink>
+            <LocaleLink
+              href="/cookie-settings"
+              className="text-sm tracking-widest text-footer-foreground hover:text-cream transition-colors uppercase"
+            >
+              {t("footer.cookieSettings")}
+            </LocaleLink>
             <span className="text-sm tracking-widest text-footer-foreground uppercase cursor-default">
               {t("footer.followUs")}
             </span>
@@ -37,17 +49,12 @@ export default function Footer() {
             <p className="text-sm text-footer-foreground/70">{t("footer.license")}</p>
           </div>
           <div className="text-center">
+            <p className="text-sm text-footer-foreground/70">{t("footer.businessCoop")}</p>
             <a
-              href="tel:+18408412568"
-              className="block text-sm text-footer-foreground hover:text-cream transition-colors"
+              href="mailto:partnership@benzenith.com"
+              className="block text-sm text-footer-foreground hover:text-cream transition-colors mt-2"
             >
-              +1840 841 25 68
-            </a>
-            <a
-              href="mailto:info@email.com"
-              className="block text-sm text-footer-foreground hover:text-cream transition-colors mt-1"
-            >
-              info@email.com
+              partnership@benzenith.com
             </a>
           </div>
           <div className="flex gap-4 md:justify-end">

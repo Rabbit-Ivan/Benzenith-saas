@@ -61,7 +61,17 @@
     "messagePlaceholder": "How can we help you? Feel free to reach out!",
     "privacyConsent": "I agree that my data is",
     "privacyLink": "collected and stored",
-    "submitButton": "Contact Us"
+    "submitButton": "Contact Us",
+    "sectionOneHeadline": "Contact Us",
+    "sectionOneCopy": "If you need any assistance, our expert team is happy to answer all related questions at any time, including order inquiries, after-sales service, and customization needs. You are welcome to contact us.",
+    "sectionTwoCustomTitle": "Bespoke & Collection Services",
+    "sectionTwoCustomCopy": "For bespoke details, please contact our specialists to begin an art collection.",
+    "sectionTwoSupportTitle": "After-Sales Service Appointments",
+    "sectionTwoSupportCopy": "Select your region to begin a professional jewelry care appointment.",
+    "sectionTwoRegionGreaterChina": "Greater China (Mainland China, Hong Kong, Macao, Taiwan):",
+    "sectionTwoRegionNorthAmerica": "North America (United States, Canada):",
+    "sectionTwoRegionEurope": "Europe (UK, France, Germany, and other European countries):",
+    "sectionTwoRegionAsiaPacific": "Asia-Pacific (Japan, Korea, Southeast Asia, Australia, etc.):"
   },
   "news": {
     "title": "Brand News",
@@ -107,7 +117,22 @@
   },
   "footer": {
     "license": "License: NCM 818500",
-    "followUs": "FOLLOW US"
+    "followUs": "FOLLOW US",
+    "cookieSettings": "Cookie Settings",
+    "businessCoop": "Brand Partnerships"
+  },
+  "cookieConsent": {
+    "title": "Cookie Preferences",
+    "description": "We use cookies to provide a better site experience. You can accept all, reject all, or decide later.",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "defer": "Decide Later",
+    "settings": "Cookie Settings",
+    "close": "Close"
+  },
+  "cookieSettings": {
+    "title": "Cookie Settings",
+    "description": "Update your cookie consent choice here."
   },
   "series": {
     "suixinshan": "Fan of Will®",

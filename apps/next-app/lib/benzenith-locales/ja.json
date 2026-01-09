@@ -61,7 +61,17 @@
     "messagePlaceholder": "どのようにお手伝いできますか？お気軽にご連絡ください！",
     "privacyConsent": "私のデータが",
     "privacyLink": "収集・保存されることに同意します",
-    "submitButton": "お問い合わせ"
+    "submitButton": "お問い合わせ",
+    "sectionOneHeadline": "お問い合わせ",
+    "sectionOneCopy": "ご不明な点やサポートが必要な場合、専門チームが注文に関するご質問、アフターサービス、カスタム要望など、あらゆる内容に随時お答えします。お気軽にお問い合わせください。",
+    "sectionTwoCustomTitle": "ハイジュエリーのカスタムとコレクションサービス",
+    "sectionTwoCustomCopy": "カスタムの詳細は専門家までお問い合わせください。芸術的なコレクションの扉を開きます。",
+    "sectionTwoSupportTitle": "アフターサービス予約",
+    "sectionTwoSupportCopy": "お住まいの地域を選択し、専門的なジュエリーケアの予約を開始してください。",
+    "sectionTwoRegionGreaterChina": "中華圏（中国本土、香港、マカオ、台湾）：",
+    "sectionTwoRegionNorthAmerica": "北米（米国、カナダ）：",
+    "sectionTwoRegionEurope": "欧州（英国、フランス、ドイツなどの欧州諸国）：",
+    "sectionTwoRegionAsiaPacific": "アジア太平洋（日本、韓国、東南アジア、オーストラリアなど）："
   },
   "news": {
     "title": "ブランドニュース",
@@ -107,7 +117,22 @@
   },
   "footer": {
     "license": "ライセンス: NCM 818500",
-    "followUs": "フォローする"
+    "followUs": "フォローする",
+    "cookieSettings": "Cookie 設定",
+    "businessCoop": "ブランドビジネス協業"
+  },
+  "cookieConsent": {
+    "title": "Cookie 設定",
+    "description": "当サイトではより良い体験のために Cookie を使用します。すべて許可、すべて拒否、または後で決定できます。",
+    "acceptAll": "すべて許可",
+    "rejectAll": "すべて拒否",
+    "defer": "後で決定",
+    "settings": "Cookie 設定",
+    "close": "閉じる"
+  },
+  "cookieSettings": {
+    "title": "Cookie 設定",
+    "description": "Cookie 同意の選択をこちらで更新できます。"
   },
   "series": {
     "suixinshan": "随心扇®",
