@@ -74,6 +74,7 @@
     "drizzle-orm": "^0.40.1",
     "formidable": "1.2.6",
     "handlebars": "4.7.8",
+    "lucide-react": "0.484.0",
     "mjml": "4.15.3",
     "nanoid": "5.1.5",
     "negotiator": "1.0.0",
