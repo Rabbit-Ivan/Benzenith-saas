@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail } from "lucide-react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import Layout from "@/components/benzenith/layout/Layout";
@@ -8,6 +9,73 @@ import LocaleLink from "@/components/benzenith/locale-link";
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const afterSalesSectionId = "after-sales-form";
+  const [formState, setFormState] = useState({
+    name: "",
+    subject: "",
+    region: "",
+    message: "",
+  });
+
+  const regionOptions = [
+    {
+      label: t("contact.sectionTwoRegionGreaterChina"),
+      value: "csgc@benzenith.com",
+    },
+    {
+      label: t("contact.sectionTwoRegionNorthAmerica"),
+      value: "csna@benzenith.com",
+    },
+    {
+      label: t("contact.sectionTwoRegionEurope"),
+      value: "cseu@benzenith.com",
+    },
+    {
+      label: t("contact.sectionTwoRegionAsiaPacific"),
+      value: "csap@benzenith.com",
+    },
+  ];
+
+  const handleFieldChange =
+    (field: keyof typeof formState) =>
+    (
+      event:
+        | ChangeEvent<HTMLInputElement>
+        | ChangeEvent<HTMLTextAreaElement>
+        | ChangeEvent<HTMLSelectElement>,
+    ) => {
+      setFormState((prev) => ({ ...prev, [field]: event.target.value }));
+    };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const selectedRegion = regionOptions.find(
+      (option) => option.value === formState.region,
+    );
+
+    if (!selectedRegion) {
+      return;
+    }
+
+    const subject = `${t("contact.formMailSubjectPrefix")} - ${selectedRegion.label}`;
+    const body = [
+      `${t("contact.formNameLabel")}: ${formState.name}`,
+      `${t("contact.formSubjectLabel")}: ${formState.subject}`,
+      `${t("contact.formMessageLabel")}: ${formState.message}`,
+    ].join("\n");
+
+    const mailtoUrl = `mailto:${selectedRegion.value}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+  };
+
+  const scrollToAfterSalesForm = () => {
+    document
+      .getElementById(afterSalesSectionId)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <Layout>
@@ -59,14 +127,28 @@ export default function ContactPage() {
                   {t("contact.sectionTwoCustomTitle")}
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
-                  {t("contact.sectionTwoCustomCopy")}{" "}
-                  <a
-                    href="mailto:concierge@benzenith.com"
-                    className="text-gold hover:underline"
-                  >
-                    concierge@benzenith.com
-                  </a>
+                  {t("contact.sectionTwoCustomCopy")}
                 </p>
+                <a
+                  href="mailto:partnership@benzenith.com"
+                  className="text-gold hover:underline"
+                >
+                  partnership@benzenith.com
+                </a>
+              </div>
+              <div className="space-y-4 pt-8 border-t border-border/40">
+                <h3 className="text-2xl font-serif font-light text-charcoal">
+                  {t("contact.sectionTwoBespokeTitle")}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {t("contact.sectionTwoBespokeCopy")}
+                </p>
+                <a
+                  href="mailto:concierge@benzenith.com"
+                  className="text-gold hover:underline"
+                >
+                  concierge@benzenith.com
+                </a>
               </div>
             </div>
             <div className="space-y-6">
@@ -77,51 +159,20 @@ export default function ContactPage() {
                 <p className="text-warm-gray leading-relaxed">
                   {t("contact.sectionTwoSupportCopy")}
                 </p>
-              </div>
-              <div className="space-y-3 text-warm-gray">
-                <p>
-                  {t("contact.sectionTwoRegionGreaterChina")}{" "}
-                  <a
-                    href="mailto:csgc@benzenith.com"
-                    className="text-gold hover:underline"
-                  >
-                    csgc@benzenith.com
-                  </a>
-                </p>
-                <p>
-                  {t("contact.sectionTwoRegionNorthAmerica")}{" "}
-                  <a
-                    href="mailto:csna@benzenith.com"
-                    className="text-gold hover:underline"
-                  >
-                    csna@benzenith.com
-                  </a>
-                </p>
-                <p>
-                  {t("contact.sectionTwoRegionEurope")}{" "}
-                  <a
-                    href="mailto:cseu@benzenith.com"
-                    className="text-gold hover:underline"
-                  >
-                    cseu@benzenith.com
-                  </a>
-                </p>
-                <p>
-                  {t("contact.sectionTwoRegionAsiaPacific")}{" "}
-                  <a
-                    href="mailto:csap@benzenith.com"
-                    className="text-gold hover:underline"
-                  >
-                    csap@benzenith.com
-                  </a>
-                </p>
+                <button
+                  type="button"
+                  className="luxury-button-primary"
+                  onClick={scrollToAfterSalesForm}
+                >
+                  {t("contact.sectionTwoSupportCta")}
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section id={afterSalesSectionId} className="section-padding bg-background">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -136,10 +187,10 @@ export default function ContactPage() {
                       {t("contact.email")}
                     </h3>
                     <a
-                      href="mailto:info@email.com"
+                      href="mailto:contact@benzenith.com"
                       className="text-warm-gray hover:text-gold transition-colors"
                     >
-                      info@email.com
+                      contact@benzenith.com
                     </a>
                   </div>
                 </div>
@@ -150,32 +201,38 @@ export default function ContactPage() {
               <h2 className="text-2xl font-serif font-light text-charcoal mb-10">
                 {t("contact.formTitle")}
               </h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input
                     type="text"
-                    placeholder="Name"
+                    value={formState.name}
+                    onChange={handleFieldChange("name")}
+                    placeholder={t("contact.formNamePlaceholder")}
                     className="w-full px-6 py-4 bg-cream border border-border text-charcoal placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
                   />
-                  <input
-                    type="email"
-                    placeholder="Email Address"
+                  <select
+                    value={formState.region}
+                    onChange={handleFieldChange("region")}
                     className="w-full px-6 py-4 bg-cream border border-border text-charcoal placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                  />
+                  >
+                    <option value="">{t("contact.formRegionPlaceholder")}</option>
+                    {regionOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input
-                    type="tel"
-                    placeholder="Phone"
-                    className="w-full px-6 py-4 bg-cream border border-border text-charcoal placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Subject"
-                    className="w-full px-6 py-4 bg-cream border border-border text-charcoal placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                  />
-                </div>
+                <input
+                  type="text"
+                  value={formState.subject}
+                  onChange={handleFieldChange("subject")}
+                  placeholder={t("contact.formSubjectPlaceholder")}
+                  className="w-full px-6 py-4 bg-cream border border-border text-charcoal placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
+                />
                 <textarea
+                  value={formState.message}
+                  onChange={handleFieldChange("message")}
                   placeholder={t("contact.messagePlaceholder")}
                   rows={6}
                   className="w-full px-6 py-4 bg-cream border border-border text-charcoal placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors resize-none"

@@ -1,0 +1,51 @@
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+const BRANCH_COOKIE_KEY = 'tinyship_branch';
+const BRANCH_HEADER_KEY = 'x-tinyship-branch';
+const DEFAULT_BRANCH = 'feature';
+
+function resolveBranch(request: NextRequest): string {
+  const urlBranch = request.nextUrl.searchParams.get('branch');
+  if (urlBranch) {
+    return urlBranch;
+  }
+
+  const cookieBranch = request.cookies.get(BRANCH_COOKIE_KEY)?.value;
+  if (cookieBranch) {
+    return cookieBranch;
+  }
+
+  const headerBranch = request.headers.get(BRANCH_HEADER_KEY);
+  if (headerBranch) {
+    return headerBranch;
+  }
+
+  return DEFAULT_BRANCH;
+}
+
+export function middleware(request: NextRequest) {
+  const branch = resolveBranch(request);
+  const headers = new Headers(request.headers);
+
+  headers.set(BRANCH_HEADER_KEY, branch);
+
+  const response = NextResponse.next({
+    request: { headers },
+  });
+
+  if (request.cookies.get(BRANCH_COOKIE_KEY)?.value !== branch) {
+    response.cookies.set(BRANCH_COOKIE_KEY, branch, {
+      path: '/',
+      sameSite: 'lax',
+    });
+  }
+
+  return response;
+}
+
+export const config = {
+  matcher: [
+    '/((?!_next|images|[\\w-]+\\.\\w+).*)',
+  ],
+};

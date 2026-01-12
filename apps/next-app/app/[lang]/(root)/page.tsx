@@ -7,9 +7,9 @@ import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
 
 const philosophyBanner = "/benzenith/assets/philosophy-banner-new.jpg";
-const heroBanner = "/benzenith/assets/hero-banner.jpg";
-const seriesSuixinshan = "/benzenith/assets/series-suixinshan.jpg";
-const seriesBenzizai = "/benzenith/assets/series-benzizai.jpg";
+const heroBanner = "/benzenith/assets/image-14.png";
+const seriesSuixinshan = "/benzenith/assets/series-suixinshan.jpeg";
+const seriesBenzizai = "/benzenith/assets/series-benzizai.jpeg";
 const seriesTingwanxiang = "/benzenith/assets/series-tingwanxiang.jpg";
 
 export default function HomePage() {
