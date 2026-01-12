@@ -50,12 +50,6 @@ export default function Footer() {
           </div>
           <div className="text-center">
             <p className="text-sm text-footer-foreground/70">{t("footer.businessCoop")}</p>
-            <a
-              href="mailto:partnership@benzenith.com"
-              className="block text-sm text-footer-foreground hover:text-cream transition-colors mt-2"
-            >
-              partnership@benzenith.com
-            </a>
           </div>
           <div className="flex gap-4 md:justify-end">
             <a
