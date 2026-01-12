@@ -47,6 +47,12 @@ importers:
       '@types/negotiator':
         specifier: 0.6.3
         version: 0.6.3
+      '@types/react':
+        specifier: ^19
+        version: 19.2.7
+      '@types/react-dom':
+        specifier: ^19
+        version: 19.2.3(@types/react@19.2.7)
       ai:
         specifier: 5.0.72
         version: 5.0.72(zod@4.1.12)
