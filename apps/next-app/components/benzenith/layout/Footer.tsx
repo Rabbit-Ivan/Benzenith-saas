@@ -1,9 +1,9 @@
 "use client";
 
-import { Instagram, Youtube } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import LocaleLink from "@/components/benzenith/locale-link";
+import { socialLinks } from "@libs/ui/social-links";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -20,12 +20,6 @@ export default function Footer() {
             />
           </LocaleLink>
           <nav className="flex flex-wrap gap-6 md:gap-10">
-            <LocaleLink
-              href="/about"
-              className="text-sm tracking-widest text-footer-foreground hover:text-cream transition-colors uppercase"
-            >
-              {t("nav.memberService")}
-            </LocaleLink>
             <LocaleLink
               href="/contact"
               className="text-sm tracking-widest text-footer-foreground hover:text-cream transition-colors uppercase"
@@ -52,24 +46,18 @@ export default function Footer() {
             <p className="text-sm text-footer-foreground/70">{t("footer.businessCoop")}</p>
           </div>
           <div className="flex gap-4 md:justify-end">
-            <a
-              href="https://www.instagram.com/benzenithhk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-footer-foreground hover:text-cream transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="https://youtube.com/@benzenith-jewelry"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-footer-foreground hover:text-cream transition-colors"
-              aria-label="YouTube"
-            >
-              <Youtube className="w-5 h-5" />
-            </a>
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-footer-foreground hover:text-cream transition-colors"
+                aria-label={label}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
         </div>
 
