@@ -98,6 +98,9 @@ export default function NewsPage() {
                         src={article.image}
                         alt={article.title}
                         className="w-full aspect-[16/9] object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
                       />
                     </LocaleLink>
                   )}

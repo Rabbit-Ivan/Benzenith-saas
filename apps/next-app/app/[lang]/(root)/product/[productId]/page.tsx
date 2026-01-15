@@ -7,11 +7,20 @@ import { useTranslation } from "react-i18next";
 
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
+import { withAssetVersion } from "@/lib/assets";
 
-const suixinshanHuanxi = "/benzenith/assets/products/suixinshan-huanxi.jpg";
-const suixinshanYeying = "/benzenith/assets/products/suixinshan-yeying.jpg";
-const suixinshanYongnian = "/benzenith/assets/products/suixinshan-yongnian.jpg";
-const suixinshanXuanlan = "/benzenith/assets/products/suixinshan-xuanlan.jpg";
+const suixinshanHuanxi = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-huanxi.jpg",
+);
+const suixinshanYeying = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-yeying.jpg",
+);
+const suixinshanYongnian = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-yongnian.jpg",
+);
+const suixinshanXuanlan = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-xuanlan.jpg",
+);
 
 const productData: Record<
   string,
@@ -299,6 +308,8 @@ export default function ProductDetailPage() {
                   src={product.image}
                   alt={getProductName()}
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </div>
@@ -414,6 +425,9 @@ export default function ProductDetailPage() {
                     src={item.image}
                     alt={getLocalizedText(item.name, item.nameCn, item.nameZhCN, item.nameJa)}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                   />
                 </div>
                 <h3 className="text-sm font-medium text-charcoal mb-1 group-hover:text-gold transition-colors line-clamp-2">

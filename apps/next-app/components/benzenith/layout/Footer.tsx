@@ -3,6 +3,7 @@
 import { useTranslation } from "react-i18next";
 
 import LocaleLink from "@/components/benzenith/locale-link";
+import { withAssetVersion } from "@/lib/assets";
 import { socialLinks } from "@libs/ui/social-links";
 
 export default function Footer() {
@@ -14,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-10 border-b border-white/10">
           <LocaleLink href="/" className="flex-shrink-0">
             <img
-              src="/benzenith/assets/logo-light.png"
+              src={withAssetVersion("/benzenith/assets/logo-light.png")}
               alt="BenZenith"
               className="h-6 md:h-8 w-auto"
             />

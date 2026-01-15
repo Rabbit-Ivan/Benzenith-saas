@@ -8,23 +8,54 @@ import { useTranslation } from "react-i18next";
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
 import ProductQuickView from "@/components/benzenith/ProductQuickView";
+import { withAssetVersion } from "@/lib/assets";
 
-const suixinshanHuanxi = "/benzenith/assets/products/suixinshan-huanxi.jpg";
-const suixinshanYeying = "/benzenith/assets/products/suixinshan-yeying.jpg";
-const suixinshanYongnian = "/benzenith/assets/products/suixinshan-yongnian.jpg";
-const suixinshanXuanlan = "/benzenith/assets/products/suixinshan-xuanlan.jpg";
+const suixinshanHuanxi = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-huanxi.jpg",
+);
+const suixinshanYeying = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-yeying.jpg",
+);
+const suixinshanYongnian = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-yongnian.jpg",
+);
+const suixinshanXuanlan = withAssetVersion(
+  "/benzenith/assets/products/suixinshan-xuanlan.jpg",
+);
 
-const benzizaiFuguang = "/benzenith/assets/products/benzizai-fuguang.jpg";
-const benzizaiShengbeiEarrings = "/benzenith/assets/products/benzizai-shengbei-earrings.jpg";
-const benzizaiBaohuluBracelet = "/benzenith/assets/products/benzizai-baohulu-bracelet.jpg";
-const benzizaiDingcaijie = "/benzenith/assets/products/benzizai-dingcaijie.jpg";
-const benzizaiJubaoben = "/benzenith/assets/products/benzizai-jubaoben.jpg";
-const benzizaiShengbeiNecklace = "/benzenith/assets/products/benzizai-shengbei-necklace.jpg";
-const benzizaiBaohuluNecklace = "/benzenith/assets/products/benzizai-baohulu-necklace.jpg";
-const benzizaiTianfu = "/benzenith/assets/products/benzizai-tianfu.jpg";
-const benzizaiYuanbaojieA = "/benzenith/assets/products/benzizai-yuanbaojie-a.jpg";
-const benzizaiYuanbaojieB = "/benzenith/assets/products/benzizai-yuanbaojie-b.jpg";
-const benzizaiYunzhou = "/benzenith/assets/products/benzizai-yunzhou.jpg";
+const benzizaiFuguang = withAssetVersion(
+  "/benzenith/assets/products/benzizai-fuguang.jpg",
+);
+const benzizaiShengbeiEarrings = withAssetVersion(
+  "/benzenith/assets/products/benzizai-shengbei-earrings.jpg",
+);
+const benzizaiBaohuluBracelet = withAssetVersion(
+  "/benzenith/assets/products/benzizai-baohulu-bracelet.jpg",
+);
+const benzizaiDingcaijie = withAssetVersion(
+  "/benzenith/assets/products/benzizai-dingcaijie.jpg",
+);
+const benzizaiJubaoben = withAssetVersion(
+  "/benzenith/assets/products/benzizai-jubaoben.jpg",
+);
+const benzizaiShengbeiNecklace = withAssetVersion(
+  "/benzenith/assets/products/benzizai-shengbei-necklace.jpg",
+);
+const benzizaiBaohuluNecklace = withAssetVersion(
+  "/benzenith/assets/products/benzizai-baohulu-necklace.jpg",
+);
+const benzizaiTianfu = withAssetVersion(
+  "/benzenith/assets/products/benzizai-tianfu.jpg",
+);
+const benzizaiYuanbaojieA = withAssetVersion(
+  "/benzenith/assets/products/benzizai-yuanbaojie-a.jpg",
+);
+const benzizaiYuanbaojieB = withAssetVersion(
+  "/benzenith/assets/products/benzizai-yuanbaojie-b.jpg",
+);
+const benzizaiYunzhou = withAssetVersion(
+  "/benzenith/assets/products/benzizai-yunzhou.jpg",
+);
 
 const products = [
   {
@@ -366,6 +397,9 @@ export default function CategoryPage() {
                         src={product.image}
                         alt={isEnglish ? product.name : product.nameCn}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading={index < 4 ? "eager" : "lazy"}
+                        decoding={index < 4 ? "auto" : "async"}
+                        fetchPriority={index < 4 ? "high" : "low"}
                       />
                     </LocaleLink>
                     <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">

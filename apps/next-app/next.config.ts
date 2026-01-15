@@ -36,6 +36,19 @@ const nextConfig: NextConfig= {
     dangerouslyAllowSVG: true,
     domains: [],
   },
+  async headers() {
+    return [
+      {
+        source: '/benzenith/assets/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
   // https://github.com/vercel/next.js/issues/50042
   // ali-oss uses urllib which requires proxy-agent (Node.js only)
   serverExternalPackages: ['mjml', 'handlebars', 'ali-oss', 'urllib'],

@@ -6,6 +6,7 @@ import { ShoppingBag, Search, Menu, X, ChevronDown, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import LocaleLink from "@/components/benzenith/locale-link";
+import { withAssetVersion } from "@/lib/assets";
 import { config } from "@config";
 
 const languages = [
@@ -60,7 +61,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           <LocaleLink href="/" className="flex-shrink-0">
             <img
-              src="/benzenith/assets/logo-light.png"
+              src={withAssetVersion("/benzenith/assets/logo-light.png")}
               alt="BenZenith"
               className="h-6 md:h-8 w-auto"
             />

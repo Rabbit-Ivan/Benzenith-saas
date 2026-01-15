@@ -4,13 +4,14 @@ import { useTranslation } from "react-i18next";
 
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
+import { withAssetVersion } from "@/lib/assets";
 
-const heroDesktop = "/benzenith/assets/brand-story/hero-desktop.jpg";
-const heroMobile = "/benzenith/assets/brand-story/hero-mobile.jpg";
-const inkRings = "/benzenith/assets/brand-story/ink-rings.jpg";
-const jadeForms = "/benzenith/assets/brand-story/jade-forms.jpg";
-const enlightenment = "/benzenith/assets/brand-story/enlightenment.jpg";
-const goldJewel = "/benzenith/assets/brand-story/gold-jewel.jpg";
+const heroDesktop = withAssetVersion("/benzenith/assets/brand-story/hero-desktop.jpg");
+const heroMobile = withAssetVersion("/benzenith/assets/brand-story/hero-mobile.jpg");
+const inkRings = withAssetVersion("/benzenith/assets/brand-story/ink-rings.jpg");
+const jadeForms = withAssetVersion("/benzenith/assets/brand-story/jade-forms.jpg");
+const enlightenment = withAssetVersion("/benzenith/assets/brand-story/enlightenment.jpg");
+const goldJewel = withAssetVersion("/benzenith/assets/brand-story/gold-jewel.jpg");
 
 export default function BrandStoryPage() {
   const { t } = useTranslation();
@@ -18,14 +19,19 @@ export default function BrandStoryPage() {
   return (
     <Layout>
       <section className="relative min-h-[720px] h-[78vh] max-h-[900px] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroDesktop})` }}
-        />
-        <div
-          className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroMobile})` }}
-        />
+        <div className="absolute inset-0">
+          <picture className="h-full w-full">
+            <source media="(min-width: 768px)" srcSet={heroDesktop} />
+            <img
+              src={heroMobile}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </picture>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
 
         <div className="relative z-10 text-center text-cream px-6 max-w-4xl mx-auto">
@@ -105,6 +111,11 @@ export default function BrandStoryPage() {
                   src={inkRings}
                   alt="Ink Rings - The Origin of Goodness"
                   className="w-full h-auto"
+                  width={1800}
+                  height={1342}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
@@ -118,6 +129,11 @@ export default function BrandStoryPage() {
                   src={jadeForms}
                   alt="Jade Forms - 1940 The Artisan's Brush"
                   className="w-full h-auto"
+                  width={1800}
+                  height={1012}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
@@ -152,6 +168,11 @@ export default function BrandStoryPage() {
                   src={enlightenment}
                   alt="Enlightenment - The Shanshan Awakening"
                   className="w-full h-auto"
+                  width={1095}
+                  height={1400}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
@@ -165,6 +186,11 @@ export default function BrandStoryPage() {
                   src={goldJewel}
                   alt="Gold Jewel - Freedom Through Goodness"
                   className="w-full h-auto"
+                  width={1800}
+                  height={1800}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>

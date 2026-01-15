@@ -5,12 +5,13 @@ import { useTranslation } from "react-i18next";
 
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
+import { withAssetVersion } from "@/lib/assets";
 
-const philosophyBanner = "/benzenith/assets/philosophy-banner-new.jpg";
-const heroBanner = "/benzenith/assets/image-14.png";
-const seriesSuixinshan = "/benzenith/assets/series-suixinshan.jpeg";
-const seriesBenzizai = "/benzenith/assets/series-benzizai.jpeg";
-const seriesTingwanxiang = "/benzenith/assets/series-tingwanxiang.jpg";
+const philosophyBanner = withAssetVersion("/benzenith/assets/philosophy-banner-new.jpg");
+const heroBanner = withAssetVersion("/benzenith/assets/image-14.png");
+const seriesSuixinshan = withAssetVersion("/benzenith/assets/series-suixinshan.jpeg");
+const seriesBenzizai = withAssetVersion("/benzenith/assets/series-benzizai.jpeg");
+const seriesTingwanxiang = withAssetVersion("/benzenith/assets/series-tingwanxiang.jpg");
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -42,10 +43,17 @@ export default function HomePage() {
   return (
     <Layout>
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBanner})` }}
-        >
+        <div className="absolute inset-0">
+          <img
+            src={heroBanner}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover"
+            width={5504}
+            height={3072}
+            loading="eager"
+            fetchPriority="high"
+          />
           <div className="absolute inset-0 bg-charcoal/20" />
         </div>
         <div className="relative z-10 text-center px-6">
@@ -108,6 +116,9 @@ export default function HomePage() {
                     src={series.image}
                     alt={t(series.nameKey)}
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-105"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -143,10 +154,18 @@ export default function HomePage() {
       </section>
 
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${philosophyBanner})` }}
-        >
+        <div className="absolute inset-0">
+          <img
+            src={philosophyBanner}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover"
+            width={1920}
+            height={800}
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+          />
           <div className="absolute inset-0 bg-charcoal/40" />
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl">

@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
+import { withAssetVersion } from "@/lib/assets";
 
 export default function ContactPage() {
   const { t } = useTranslation();
@@ -100,10 +101,13 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="overflow-hidden bg-secondary">
               <img
-                src="/benzenith/assets/contact/contact-section-1.png"
+                src={withAssetVersion("/benzenith/assets/contact/contact-section-1.png")}
                 alt={t("contact.sectionOneHeadline")}
                 className="w-full h-full object-cover"
-                loading="lazy"
+                width={1200}
+                height={1144}
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             <div className="space-y-6">

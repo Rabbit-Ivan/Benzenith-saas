@@ -47,12 +47,13 @@ export function localeMiddleware(request: NextRequest): NextResponse | undefined
   // Redirect if there is no locale (for pages)
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
+    const normalizedPath = pathname === '/' ? '' : pathname;
 
     // e.g. incoming request is /products?token=123
     // The new URL is now /en/products?token=123
     return NextResponse.redirect(
       new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}${search}`,
+        `/${locale}${normalizedPath}${search}`,
         request.url
       )
     );

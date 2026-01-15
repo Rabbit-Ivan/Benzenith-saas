@@ -153,6 +153,9 @@ export default function ProductQuickView({
               src={product.image}
               alt={getProductName()}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
             />
           </div>
 
