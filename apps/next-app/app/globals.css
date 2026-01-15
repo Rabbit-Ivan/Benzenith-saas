@@ -115,6 +115,20 @@
     --sidebar: var(--sidebar-background);
   }
 
+  :root[lang="zh-TW"] {
+    --font-sans: var(--font-montserrat), var(--font-noto-sans-tc), var(--font-noto-sans-sc), var(--font-noto-sans-jp), "PingFang TC",
+      "PingFang SC", "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+    --font-serif: var(--font-cormorant), var(--font-noto-serif-tc), var(--font-noto-serif-sc), var(--font-noto-serif-jp), "Songti SC",
+      "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  }
+
+  :root[lang="ja"] {
+    --font-sans: var(--font-montserrat), var(--font-noto-sans-jp), var(--font-noto-sans-sc), var(--font-noto-sans-tc), "Hiragino Sans",
+      "Yu Gothic", "PingFang SC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    --font-serif: var(--font-cormorant), var(--font-noto-serif-jp), var(--font-noto-serif-sc), var(--font-noto-serif-tc), "Hiragino Mincho ProN",
+      "Yu Mincho", "Songti SC", Georgia, serif;
+  }
+
   .dark {
     --background: 30 10% 8%;
     --foreground: 40 15% 92%;

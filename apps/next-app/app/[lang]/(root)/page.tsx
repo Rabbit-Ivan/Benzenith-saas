@@ -20,8 +20,7 @@ export default function HomePage() {
         as="image"
         href={HERO_BANNER_URL}
         type="image/webp"
-        // @ts-expect-error - fetchpriority is valid HTML attribute
-        fetchpriority="high"
+        fetchPriority="high"
       />
       <HomePageClient />
     </>
