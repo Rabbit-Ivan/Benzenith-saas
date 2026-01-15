@@ -1,0 +1,21 @@
+# Zeabur deployment configuration
+# See: https://zeabur.com/docs/deploy/config-file
+
+# Keep at least one instance running to avoid cold start delays
+min_instances: 1
+
+# Health check configuration
+health_check:
+  enabled: true
+  path: /
+  interval: 30
+  timeout: 10
+
+# Resource allocation
+resources:
+  cpu: 0.5
+  memory: 512
+
+# Environment variables
+env:
+  NODE_ENV: production

@@ -13,9 +13,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Montserrat", "Noto Sans SC", "Noto Sans TC", "Noto Sans JP", "PingFang SC",
+  --font-sans: var(--font-montserrat), var(--font-noto-sans-sc), var(--font-noto-sans-tc), var(--font-noto-sans-jp), "PingFang SC",
     "PingFang TC", "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "Cormorant Garamond", "Noto Serif SC", "Noto Serif TC", "Noto Serif JP", "Songti SC",
+  --font-serif: var(--font-cormorant), var(--font-noto-serif-sc), var(--font-noto-serif-tc), var(--font-noto-serif-jp), "Songti SC",
     "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
