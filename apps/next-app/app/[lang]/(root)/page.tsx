@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { HERO_BANNER_URL } from "@/lib/hero-banner";
+import { HERO_BANNER_MOBILE_URL, HERO_BANNER_URL } from "@/lib/hero-banner";
 
 import HomePageClient from "./HomePageClient";
 
@@ -18,8 +18,17 @@ export default function HomePage() {
       <link
         rel="preload"
         as="image"
+        href={HERO_BANNER_MOBILE_URL}
+        type="image/webp"
+        media="(max-width: 768px)"
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
         href={HERO_BANNER_URL}
         type="image/webp"
+        media="(min-width: 769px)"
         fetchPriority="high"
       />
       <HomePageClient />

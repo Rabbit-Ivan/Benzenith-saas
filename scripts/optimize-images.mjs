@@ -24,6 +24,13 @@ const images = [
     description: 'Hero banner (19.7MB -> ~150KB)'
   },
   {
+    input: 'image-14.png',
+    output: 'hero-banner-mobile.webp',
+    width: 1080,
+    quality: 80,
+    description: 'Hero banner mobile (19.7MB -> ~50KB)'
+  },
+  {
     input: 'series-suixinshan.jpeg',
     output: 'series-suixinshan.webp',
     width: 800,

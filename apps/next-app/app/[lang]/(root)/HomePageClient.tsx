@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
-import { HERO_BANNER_URL } from "@/lib/hero-banner";
+import { HERO_BANNER_MOBILE_URL, HERO_BANNER_URL } from "@/lib/hero-banner";
 
 const philosophyBanner = "/benzenith/assets/philosophy-banner-new.jpg";
 const seriesSuixinshan = "/benzenith/assets/series-suixinshan.webp";
@@ -42,12 +42,21 @@ export default function HomePageClient() {
   return (
     <Layout>
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${HERO_BANNER_URL})` }}
-        >
-          <div className="absolute inset-0 bg-charcoal/20" />
-        </div>
+        <picture className="absolute inset-0">
+          <source
+            media="(max-width: 768px)"
+            srcSet={HERO_BANNER_MOBILE_URL}
+            type="image/webp"
+          />
+          <img
+            src={HERO_BANNER_URL}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+            fetchPriority="high"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-charcoal/20" />
         <div className="relative z-10 text-center px-6">
           <h2
             style={{
