@@ -121,32 +121,25 @@ export default function ContactPage() {
       <section id={afterSalesSectionId} className="section-padding bg-background">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-2xl font-serif font-light text-charcoal mb-10">
-                {t("contact.infoTitle")}
-              </h2>
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-medium text-charcoal mb-1">
-                      {t("contact.email")}
-                    </h3>
-                    <a
-                      href="mailto:contact@benzenith.com"
-                      className="text-warm-gray hover:text-gold transition-colors"
-                    >
-                      contact@benzenith.com
-                    </a>
-                  </div>
-                </div>
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-serif font-light text-charcoal">
+                  {t("contact.sectionTwoSupportTitle")}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {t("contact.sectionTwoSupportCopy")}
+                </p>
+                <button
+                  type="button"
+                  className="luxury-button-primary"
+                  onClick={scrollToAfterSalesForm}
+                >
+                  {t("contact.sectionTwoSupportCta")}
+                </button>
               </div>
             </div>
 
             <div>
-              <h2 className="text-2xl font-serif font-light text-charcoal mb-10">
-                {t("contact.formTitle")}
-              </h2>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input
@@ -239,21 +232,25 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-serif font-light text-charcoal">
-                  {t("contact.sectionTwoSupportTitle")}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {t("contact.sectionTwoSupportCopy")}
-                </p>
-                <button
-                  type="button"
-                  className="luxury-button-primary"
-                  onClick={scrollToAfterSalesForm}
-                >
-                  {t("contact.sectionTwoSupportCta")}
-                </button>
+            <div>
+              <h2 className="text-2xl font-serif font-light text-charcoal mb-10">
+                {t("contact.infoTitle")}
+              </h2>
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <Mail className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-medium text-charcoal mb-1">
+                      {t("contact.email")}
+                    </h3>
+                    <a
+                      href="mailto:contact@benzenith.com"
+                      className="text-warm-gray hover:text-gold transition-colors"
+                    >
+                      contact@benzenith.com
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
