@@ -91,7 +91,8 @@
     "recentPosts": "Recent Posts",
     "tags": "Tags",
     "comments": "Comments",
-    "page": "Page"
+    "page": "Page",
+    "noResults": "No matching stories found."
   },
   "category": {
     "showingResults": "Showing all {{count}} results",

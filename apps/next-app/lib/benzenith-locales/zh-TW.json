@@ -91,7 +91,8 @@
     "recentPosts": "最近的帖子",
     "tags": "標籤",
     "comments": "評論",
-    "page": "頁"
+    "page": "頁",
+    "noResults": "未找到相關內容"
   },
   "category": {
     "showingResults": "顯示全部 {{count}} 個結果",

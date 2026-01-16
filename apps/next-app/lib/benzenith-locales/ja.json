@@ -91,7 +91,8 @@
     "recentPosts": "最近の投稿",
     "tags": "タグ",
     "comments": "コメント",
-    "page": "ページ"
+    "page": "ページ",
+    "noResults": "一致する記事が見つかりません。"
   },
   "category": {
     "showingResults": "全 {{count}} 件を表示",

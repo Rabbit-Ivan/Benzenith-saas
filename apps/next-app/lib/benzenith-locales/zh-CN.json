@@ -91,7 +91,8 @@
     "recentPosts": "最近的帖子",
     "tags": "标签",
     "comments": "评论",
-    "page": "页"
+    "page": "页",
+    "noResults": "未找到相关内容"
   },
   "category": {
     "showingResults": "显示全部 {{count}} 个结果",
