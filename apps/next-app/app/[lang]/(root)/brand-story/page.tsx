@@ -58,7 +58,7 @@ export default function BrandStoryPage() {
             style={{ animationDelay: "1s", animationFillMode: "forwards" }}
           >
             <LocaleLink
-              href="/category/suixinshan"
+              href="/category/fanofwill"
               className="px-8 py-3 bg-cream text-charcoal text-sm tracking-widest uppercase hover:bg-gold hover:text-cream transition-colors"
             >
               {t("brandStory.exploreSeries")}
@@ -207,7 +207,7 @@ export default function BrandStoryPage() {
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
               <LocaleLink
-                href="/category/suixinshan"
+                href="/category/fanofwill"
                 className="px-8 py-3 bg-gold text-charcoal text-sm tracking-widest uppercase hover:bg-cream transition-colors"
               >
                 {t("brandStory.exploreSeries")}

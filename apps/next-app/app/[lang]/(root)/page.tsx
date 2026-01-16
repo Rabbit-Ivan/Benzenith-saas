@@ -19,7 +19,7 @@ export default function HomePage() {
         rel="preload"
         as="image"
         href={HERO_BANNER_MOBILE_URL}
-        type="image/webp"
+        type="image/jpeg"
         media="(max-width: 768px)"
         fetchPriority="high"
       />
@@ -27,7 +27,7 @@ export default function HomePage() {
         rel="preload"
         as="image"
         href={HERO_BANNER_URL}
-        type="image/webp"
+        type="image/jpeg"
         media="(min-width: 769px)"
         fetchPriority="high"
       />

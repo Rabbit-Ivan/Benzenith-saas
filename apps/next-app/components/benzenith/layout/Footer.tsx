@@ -13,11 +13,19 @@ export default function Footer() {
       <div className="container-luxury py-16">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-10 border-b border-white/10">
           <LocaleLink href="/" className="flex-shrink-0">
-            <img
-              src="/benzenith/assets/logo-light.png"
-              alt="BenZenith"
-              className="h-6 md:h-8 w-auto"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet="/benzenith/assets/footer-logo-mobile.jpg"
+                type="image/jpeg"
+              />
+              <img
+                src="/benzenith/assets/footer-logo.jpg"
+                alt="BenZenith"
+                className="h-6 md:h-8 w-auto"
+                loading="lazy"
+              />
+            </picture>
           </LocaleLink>
           <nav className="flex flex-wrap gap-6 md:gap-10">
             <LocaleLink

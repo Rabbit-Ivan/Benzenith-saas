@@ -230,6 +230,13 @@ export default function CategoryPage() {
   const params = useParams();
   const categoryParam = params?.categoryId;
   const categoryId = Array.isArray(categoryParam) ? categoryParam[0] : categoryParam;
+  const categoryAliasMap: Record<string, string> = {
+    fanofwill: "suixinshan",
+    suchnessofself: "benzizai",
+  };
+  const normalizedCategoryId = categoryId
+    ? categoryAliasMap[categoryId] ?? categoryId
+    : undefined;
   const { t, i18n } = useTranslation();
   const [selectedProduct, setSelectedProduct] = useState<(typeof products)[0] | null>(
     null,
@@ -247,8 +254,8 @@ export default function CategoryPage() {
   };
 
   const getCategoryName = () => {
-    if (categoryId === "suixinshan") return t("series.suixinshan");
-    if (categoryId === "benzizai") return t("series.benzizai");
+    if (normalizedCategoryId === "suixinshan") return t("series.suixinshan");
+    if (normalizedCategoryId === "benzizai") return t("series.benzizai");
     return t("series.tingwanxiang");
   };
 
@@ -269,7 +276,9 @@ export default function CategoryPage() {
     return name;
   };
 
-  const filteredProducts = products.filter((product) => product.category === categoryId);
+  const filteredProducts = products.filter(
+    (product) => product.category === normalizedCategoryId,
+  );
   const getProductName = (product: (typeof products)[0]) => {
     if (i18n.language === "en") return product.name;
     if (i18n.language === "zh-CN") return product.nameZhCN;
@@ -315,7 +324,7 @@ export default function CategoryPage() {
 
   const isEnglish = i18n.language === "en";
 
-  if (!categoryId) {
+  if (!normalizedCategoryId) {
     return (
       <Layout>
         <div className="section-padding container-luxury text-center">

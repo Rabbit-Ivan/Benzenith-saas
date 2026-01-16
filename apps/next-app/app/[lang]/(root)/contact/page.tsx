@@ -118,60 +118,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-cream">
-        <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-serif font-light text-charcoal">
-                  {t("contact.sectionTwoCustomTitle")}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {t("contact.sectionTwoCustomCopy")}
-                </p>
-                <a
-                  href="mailto:partnership@benzenith.com"
-                  className="text-gold hover:underline"
-                >
-                  partnership@benzenith.com
-                </a>
-              </div>
-              <div className="space-y-4 pt-8 border-t border-border/40">
-                <h3 className="text-2xl font-serif font-light text-charcoal">
-                  {t("contact.sectionTwoBespokeTitle")}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {t("contact.sectionTwoBespokeCopy")}
-                </p>
-                <a
-                  href="mailto:concierge@benzenith.com"
-                  className="text-gold hover:underline"
-                >
-                  concierge@benzenith.com
-                </a>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-serif font-light text-charcoal">
-                  {t("contact.sectionTwoSupportTitle")}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {t("contact.sectionTwoSupportCopy")}
-                </p>
-                <button
-                  type="button"
-                  className="luxury-button-primary"
-                  onClick={scrollToAfterSalesForm}
-                >
-                  {t("contact.sectionTwoSupportCta")}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id={afterSalesSectionId} className="section-padding bg-background">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -255,6 +201,60 @@ export default function ContactPage() {
                   {t("contact.submitButton")}
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-cream">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-serif font-light text-charcoal">
+                  {t("contact.sectionTwoCustomTitle")}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {t("contact.sectionTwoCustomCopy")}
+                </p>
+                <a
+                  href="mailto:partnership@benzenith.com"
+                  className="text-gold hover:underline"
+                >
+                  partnership@benzenith.com
+                </a>
+              </div>
+              <div className="space-y-4 pt-8 border-t border-border/40">
+                <h3 className="text-2xl font-serif font-light text-charcoal">
+                  {t("contact.sectionTwoBespokeTitle")}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {t("contact.sectionTwoBespokeCopy")}
+                </p>
+                <a
+                  href="mailto:concierge@benzenith.com"
+                  className="text-gold hover:underline"
+                >
+                  concierge@benzenith.com
+                </a>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-serif font-light text-charcoal">
+                  {t("contact.sectionTwoSupportTitle")}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {t("contact.sectionTwoSupportCopy")}
+                </p>
+                <button
+                  type="button"
+                  className="luxury-button-primary"
+                  onClick={scrollToAfterSalesForm}
+                >
+                  {t("contact.sectionTwoSupportCta")}
+                </button>
+              </div>
             </div>
           </div>
         </div>

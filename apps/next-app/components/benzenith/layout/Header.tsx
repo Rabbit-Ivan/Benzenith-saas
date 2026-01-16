@@ -9,8 +9,8 @@ import LocaleLink from "@/components/benzenith/locale-link";
 import { config } from "@config";
 
 const languages = [
-  { code: "zh-TW", label: "中文(漢字)" },
-  { code: "zh-CN", label: "中文(简体)" },
+  { code: "zh-TW", label: "繁体中文" },
+  { code: "zh-CN", label: "简体中文" },
   { code: "ja", label: "日本語" },
   { code: "en", label: "English" },
 ];
@@ -78,13 +78,13 @@ export default function Header() {
               <div className="absolute top-full left-0 pt-2 opacity-0 invisible translate-y-2 scale-95 origin-top group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 ease-out">
                 <div className="bg-[#000000] border border-white/10 shadow-lg py-3 min-w-[280px]">
                   <LocaleLink
-                    href="/category/suixinshan"
+                    href="/category/fanofwill"
                     className="block px-5 py-2 text-sm tracking-wider text-white hover:text-gold hover:bg-white/10 transition-colors"
                   >
                     {t("series.suixinshan")}
                   </LocaleLink>
                   <LocaleLink
-                    href="/category/benzizai"
+                    href="/category/suchnessofself"
                     className="block px-5 py-2 text-sm tracking-wider text-white hover:text-gold hover:bg-white/10 transition-colors"
                   >
                     {t("series.benzizai")}
@@ -192,14 +192,14 @@ export default function Header() {
               >
                 <div className="pl-4 space-y-2">
                   <LocaleLink
-                    href="/category/suixinshan"
+                    href="/category/fanofwill"
                     className="block text-sm tracking-wider text-white/70 hover:text-gold py-1"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {t("series.suixinshan")}
                   </LocaleLink>
                   <LocaleLink
-                    href="/category/benzizai"
+                    href="/category/suchnessofself"
                     className="block text-sm tracking-wider text-white/70 hover:text-gold py-1"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

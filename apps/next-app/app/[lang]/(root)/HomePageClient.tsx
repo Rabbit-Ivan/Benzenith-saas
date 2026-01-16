@@ -7,33 +7,41 @@ import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
 import { HERO_BANNER_MOBILE_URL, HERO_BANNER_URL } from "@/lib/hero-banner";
 
-const philosophyBanner = "/benzenith/assets/philosophy-banner-new.jpg";
-const seriesSuixinshan = "/benzenith/assets/series-suixinshan.webp";
-const seriesBenzizai = "/benzenith/assets/series-benzizai.webp";
-const seriesTingwanxiang = "/benzenith/assets/series-tingwanxiang.webp";
+const footerPoster = "/benzenith/assets/home-footer-poster.jpg";
+const footerPosterMobile = "/benzenith/assets/home-footer-poster-mobile.jpg";
+const seriesLogo = "/benzenith/assets/home-series-logo.png";
+const seriesFanOfWill = "/benzenith/assets/home-series-1.jpg";
+const seriesFanOfWillMobile = "/benzenith/assets/home-series-1-mobile.jpg";
+const seriesSuchnessOfSelf = "/benzenith/assets/home-series-2.jpg";
+const seriesSuchnessOfSelfMobile = "/benzenith/assets/home-series-2-mobile.jpg";
+const seriesTingwanxiang = "/benzenith/assets/home-series-3.jpg";
+const seriesTingwanxiangMobile = "/benzenith/assets/home-series-3-mobile.jpg";
 
 export default function HomePageClient() {
   const { t } = useTranslation();
 
   const jewelrySeries = [
     {
-      id: "suixinshan",
+      id: "fanofwill",
       nameKey: "series.suixinshan",
-      image: seriesSuixinshan,
-      link: "/category/suixinshan",
+      image: seriesFanOfWill,
+      mobileImage: seriesFanOfWillMobile,
+      link: "/category/fanofwill",
       available: true,
     },
     {
-      id: "benzizai",
+      id: "suchnessofself",
       nameKey: "series.benzizai",
-      image: seriesBenzizai,
-      link: "/category/benzizai",
+      image: seriesSuchnessOfSelf,
+      mobileImage: seriesSuchnessOfSelfMobile,
+      link: "/category/suchnessofself",
       available: true,
     },
     {
       id: "tingwanxiang",
       nameKey: "series.tingwanxiang",
       image: seriesTingwanxiang,
+      mobileImage: seriesTingwanxiangMobile,
       link: "/category/tingwanxiang",
       available: false,
     },
@@ -46,7 +54,7 @@ export default function HomePageClient() {
           <source
             media="(max-width: 768px)"
             srcSet={HERO_BANNER_MOBILE_URL}
-            type="image/webp"
+            type="image/jpeg"
           />
           <img
             src={HERO_BANNER_URL}
@@ -102,9 +110,17 @@ export default function HomePageClient() {
 
       <section id="jewelry-series" className="section-padding bg-background">
         <div className="container-luxury">
-          <h2 className="text-3xl md:text-4xl font-serif font-light text-charcoal text-center mb-16">
-            {t("home.jewelrySeriesTitle")}
-          </h2>
+          <div className="flex flex-col items-center text-center mb-16">
+            <img
+              src={seriesLogo}
+              alt={t("home.jewelrySeriesTitle")}
+              className="h-12 md:h-16 w-auto mb-6"
+              loading="lazy"
+            />
+            <h2 className="text-3xl md:text-4xl font-serif font-light text-charcoal">
+              {t("home.jewelrySeriesTitle")}
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {jewelrySeries.map((series, index) => (
               <div
@@ -113,11 +129,19 @@ export default function HomePageClient() {
                 style={{ animationDelay: `${0.2 + index * 0.15}s` }}
               >
                 <div className="relative overflow-hidden aspect-[4/5] mb-6 border border-transparent group-hover:border-gold/40 transition-all duration-500 shadow-sm group-hover:shadow-xl">
-                  <img
-                    src={series.image}
-                    alt={t(series.nameKey)}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-105"
-                  />
+                  <picture>
+                    <source
+                      media="(max-width: 768px)"
+                      srcSet={series.mobileImage}
+                      type="image/jpeg"
+                    />
+                    <img
+                      src={series.image}
+                      alt={t(series.nameKey)}
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-105"
+                      loading="lazy"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
@@ -152,12 +176,21 @@ export default function HomePageClient() {
       </section>
 
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${philosophyBanner})` }}
-        >
-          <div className="absolute inset-0 bg-charcoal/40" />
-        </div>
+        <picture className="absolute inset-0">
+          <source
+            media="(max-width: 768px)"
+            srcSet={footerPosterMobile}
+            type="image/jpeg"
+          />
+          <img
+            src={footerPoster}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-charcoal/40" />
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <h2 className="text-2xl md:text-4xl font-serif font-light text-cream leading-relaxed drop-shadow-lg text-center lg:text-3xl">
             {t("home.philosophyText")}
