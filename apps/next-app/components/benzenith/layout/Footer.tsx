@@ -20,9 +20,9 @@ export default function Footer() {
                 type="image/jpeg"
               />
               <img
-                src="/benzenith/assets/footer-logo.jpg"
+                src="/benzenith/assets/footer-logo.png"
                 alt="BenZenith"
-                className="h-6 md:h-8 w-auto"
+                className="h-10 md:h-12 w-auto max-w-[160px] md:max-w-[200px] object-contain"
                 loading="lazy"
               />
             </picture>
@@ -47,9 +47,7 @@ export default function Footer() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
-          <div>
-            <p className="text-sm text-footer-foreground/70">{t("footer.license")}</p>
-          </div>
+          <div></div>
           <div className="text-center">
             <p className="text-sm text-footer-foreground/70">{t("footer.businessCoop")}</p>
           </div>

@@ -9,7 +9,6 @@ import { HERO_BANNER_MOBILE_URL, HERO_BANNER_URL } from "@/lib/hero-banner";
 
 const footerPoster = "/benzenith/assets/home-footer-poster.jpg";
 const footerPosterMobile = "/benzenith/assets/home-footer-poster-mobile.jpg";
-const seriesLogo = "/benzenith/assets/home-series-logo.png";
 const seriesFanOfWill = "/benzenith/assets/home-series-1.jpg";
 const seriesFanOfWillMobile = "/benzenith/assets/home-series-1-mobile.jpg";
 const seriesSuchnessOfSelf = "/benzenith/assets/home-series-2.jpg";
@@ -111,12 +110,6 @@ export default function HomePageClient() {
       <section id="jewelry-series" className="section-padding bg-background">
         <div className="container-luxury">
           <div className="flex flex-col items-center text-center mb-16">
-            <img
-              src={seriesLogo}
-              alt={t("home.jewelrySeriesTitle")}
-              className="h-12 md:h-16 w-auto mb-6"
-              loading="lazy"
-            />
             <h2 className="text-3xl md:text-4xl font-serif font-light text-charcoal">
               {t("home.jewelrySeriesTitle")}
             </h2>
