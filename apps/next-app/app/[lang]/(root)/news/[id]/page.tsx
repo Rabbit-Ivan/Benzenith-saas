@@ -3,14 +3,16 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Share2 } from "lucide-react";
 
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
-import { getNewsArticleById, newsArticles } from "@/lib/benzenith-news";
+import {
+  getNewsArticleById,
+  getNewsArticleIds,
+  getNewsArticles,
+} from "@/lib/benzenith-news";
 import { getServerTranslation } from "@/lib/i18n-server";
 
 // Generate static params for all articles
 export async function generateStaticParams() {
-  return newsArticles.map((article) => ({
-    id: String(article.id),
-  }));
+  return getNewsArticleIds().map((id) => ({ id: String(id) }));
 }
 
 // SEO metadata
@@ -21,7 +23,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, id } = await params;
   const { t } = await getServerTranslation(lang);
-  const article = getNewsArticleById(id);
+  const article = getNewsArticleById(id, lang);
 
   if (!article) {
     return {
@@ -121,19 +123,23 @@ export default async function NewsDetailPage({
 }) {
   const { lang, id } = await params;
   const { t } = await getServerTranslation(lang);
-  const article = getNewsArticleById(id);
+  const localizedArticles = getNewsArticles(lang);
+  const article = getNewsArticleById(id, lang);
 
   // Get adjacent articles for navigation
-  const currentIndex = newsArticles.findIndex((a) => a.id === Number(id));
-  const prevArticle = currentIndex > 0 ? newsArticles[currentIndex - 1] : null;
+  const currentIndex = localizedArticles.findIndex(
+    (item) => item.id === Number(id)
+  );
+  const prevArticle =
+    currentIndex > 0 ? localizedArticles[currentIndex - 1] : null;
   const nextArticle =
-    currentIndex < newsArticles.length - 1
-      ? newsArticles[currentIndex + 1]
+    currentIndex < localizedArticles.length - 1
+      ? localizedArticles[currentIndex + 1]
       : null;
 
   // Get related articles (excluding current)
-  const relatedArticles = newsArticles
-    .filter((a) => a.id !== Number(id))
+  const relatedArticles = localizedArticles
+    .filter((item) => item.id !== Number(id))
     .slice(0, 3);
 
   if (!article) {

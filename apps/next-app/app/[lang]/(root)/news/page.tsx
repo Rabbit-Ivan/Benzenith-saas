@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 
 import Layout from "@/components/benzenith/layout/Layout";
 import LocaleLink from "@/components/benzenith/locale-link";
-import { newsArticles } from "@/lib/benzenith-news";
+import { getNewsArticles } from "@/lib/benzenith-news";
 import { getServerTranslation } from "@/lib/i18n-server";
 import NewsSearchClient from "./NewsSearchClient";
 
@@ -106,8 +106,9 @@ export default async function NewsPage({
   const { lang } = await params;
   const { t } = await getServerTranslation(lang);
 
-  const featuredArticle = newsArticles[0];
-  const listArticles = newsArticles.slice(1);
+  const localizedArticles = getNewsArticles(lang);
+  const featuredArticle = localizedArticles[0];
+  const listArticles = localizedArticles.slice(1);
 
   // Generate JSON-LD structured data for SEO
   const jsonLd = {
@@ -124,7 +125,7 @@ export default async function NewsPage({
         url: "https://benzenith.com/benzenith/assets/logo.png",
       },
     },
-    blogPost: newsArticles.map((article) => ({
+    blogPost: localizedArticles.map((article) => ({
       "@type": "BlogPosting",
       headline: article.title,
       description: extractExcerpt(article.contentHtml).slice(0, 160),
@@ -329,6 +330,7 @@ export default async function NewsPage({
               <NewsSearchClient
                 searchLabel={t("news.search")}
                 noResultsText={t("news.noResults")}
+                articles={localizedArticles}
               />
 
               {/* Recent Posts */}
@@ -340,7 +342,7 @@ export default async function NewsPage({
                   {t("news.recentPosts")}
                 </h2>
                 <ul className="space-y-4">
-                  {newsArticles.slice(0, 5).map((article, index) => (
+                  {localizedArticles.slice(0, 5).map((article, index) => (
                     <li key={article.id}>
                       <LocaleLink
                         href={`/news/${article.id}`}

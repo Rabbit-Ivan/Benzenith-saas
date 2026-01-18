@@ -9,6 +9,11 @@ import { HERO_BANNER_MOBILE_URL, HERO_BANNER_URL } from "@/lib/hero-banner";
 
 const footerPoster = "/benzenith/assets/home-footer-poster.jpg";
 const footerPosterMobile = "/benzenith/assets/home-footer-poster-mobile.jpg";
+const heroLogo = "/benzenith/assets/home-banner-logo.png";
+const heroLogoMobile = "/benzenith/assets/home-banner-logo-mobile.png";
+const footerPosterLogo = "/benzenith/assets/home-footer-poster-logo.png";
+const footerPosterLogoMobile =
+  "/benzenith/assets/home-footer-poster-logo-mobile.png";
 const seriesFanOfWill = "/benzenith/assets/home-series-1.jpg";
 const seriesFanOfWillMobile = "/benzenith/assets/home-series-1-mobile.jpg";
 const seriesSuchnessOfSelf = "/benzenith/assets/home-series-2.jpg";
@@ -64,7 +69,23 @@ export default function HomePageClient() {
           />
         </picture>
         <div className="absolute inset-0 bg-charcoal/20" />
-        <div className="relative z-10 text-center px-6">
+        <div className="absolute inset-x-0 top-[clamp(56px,10vh,140px)] z-10 flex justify-center pointer-events-none">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet={heroLogoMobile}
+              type="image/png"
+            />
+            <img
+              src={heroLogo}
+              alt=""
+              aria-hidden="true"
+              className="w-[clamp(64px,6vw,128px)] h-auto opacity-90"
+              loading="eager"
+            />
+          </picture>
+        </div>
+        <div className="relative z-20 text-center px-6">
           <h2
             style={{
               animationDelay: "0.5s",
@@ -184,7 +205,23 @@ export default function HomePageClient() {
           />
         </picture>
         <div className="absolute inset-0 bg-charcoal/40" />
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+        <div className="absolute inset-x-0 top-[clamp(44px,8vh,120px)] z-10 flex justify-center pointer-events-none">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet={footerPosterLogoMobile}
+              type="image/png"
+            />
+            <img
+              src={footerPosterLogo}
+              alt=""
+              aria-hidden="true"
+              className="w-[clamp(48px,4.5vw,96px)] h-auto opacity-90"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <div className="relative z-20 text-center px-6 max-w-4xl">
           <h2 className="text-2xl md:text-4xl font-serif font-light text-cream leading-relaxed drop-shadow-lg text-center lg:text-3xl">
             {t("home.philosophyText")}
           </h2>

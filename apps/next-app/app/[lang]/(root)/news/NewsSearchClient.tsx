@@ -4,11 +4,12 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 
 import LocaleLink from "@/components/benzenith/locale-link";
-import { newsArticles } from "@/lib/benzenith-news";
+import type { NewsArticleContent } from "@/lib/benzenith-news";
 
 interface NewsSearchClientProps {
   searchLabel: string;
   noResultsText: string;
+  articles: NewsArticleContent[];
 }
 
 const stripHtml = (html: string) =>
@@ -17,6 +18,7 @@ const stripHtml = (html: string) =>
 export default function NewsSearchClient({
   searchLabel,
   noResultsText,
+  articles,
 }: NewsSearchClientProps) {
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
@@ -25,12 +27,12 @@ export default function NewsSearchClient({
 
   const filteredArticles = useMemo(() => {
     if (!normalizedQuery) return [];
-    return newsArticles.filter((article) => {
+    return articles.filter((article) => {
       const haystack =
         `${article.title} ${stripHtml(article.contentHtml)}`.toLowerCase();
       return haystack.includes(normalizedQuery);
     });
-  }, [normalizedQuery]);
+  }, [articles, normalizedQuery]);
 
   const showResults = isFocused && normalizedQuery.length > 0;
 
