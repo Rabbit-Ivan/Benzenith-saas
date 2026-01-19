@@ -105,7 +105,7 @@ pnpm run db:seed
 现在数据库完成配置成功，让我们来验证一下：
 
 ```bash
-# 打开 Driizle 内置的数据管理系统
+# 打开 Drizzle 内置的数据管理系统
 # 验证表架构是否成功创建以及数据是否成功插入，打开 https://local.drizzle.studio 可以访问
 pnpm run db:studio
 ```

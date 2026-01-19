@@ -17,8 +17,8 @@
 在开始之前，请确保你的开发环境满足以下要求：
 
 ### 必需软件
-- **Node.js**: >= 22.20.0 （**必须使用 22.20.0 或更高的 LTS 版本**）
-  > ⚠️ **重要提示**：由于 Nuxt 4 使用的 [oxc-parser 原生绑定问题](https://github.com/nuxt/nuxt/issues/33480)，Node.js 版本必须 >= 22.20.0。低于此版本可能导致安装失败。
+- **Node.js**: >= 22.0.0 （推荐使用 22.20.0 或更高的 LTS 版本）
+  > ⚠️ **提示**：如需使用 Nuxt 4，由于 [oxc-parser 原生绑定问题](https://github.com/nuxt/nuxt/issues/33480)，建议 Node.js 版本 >= 22.20.0
 - **PNPM**: >= 9.0.0 （推荐的包管理器）
 - **PostgreSQL**: >= 13.0 （数据库）
 
@@ -29,12 +29,12 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/TinyshipCN/tinyship.git
-cd tinyship
+git clone https://github.com/Rabbit-Ivan/Benzenith-saas.git
+cd Benzenith-saas
 
 # 或者使用 SSH
-git clone git@github.com:TinyshipCN/tinyship.git
-cd tinyship
+git clone git@github.com:Rabbit-Ivan/Benzenith-saas.git
+cd Benzenith-saas
 ```
 
 ### 2. 安装 PNPM（如果尚未安装）
@@ -67,4 +67,4 @@ pnpm install
 
 下一步 [数据库配置指南](./database.md)
 
-如果遇到其他问题 请在 [GitHub Discussion](https://github.com/orgs/TinyshipCN/discussions) 或者 [Tinyship Issues](https://github.com/TinyshipCN/tinyship/issues)中提交问题。
+如果遇到其他问题 请在 [GitHub Discussion](https://github.com/Rabbit-Ivan/Benzenith-saas/discussions) 或者 [Issues](https://github.com/Rabbit-Ivan/Benzenith-saas/issues) 中提交问题。

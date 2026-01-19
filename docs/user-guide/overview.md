@@ -2,6 +2,8 @@
 
 🚀 一个现代化的、功能完备的 monorepo 起始套件，专为构建 SaaS 应用设计，同时支持国内和国际市场。
 
+Benzenith 官网基于 TinyShip 模板落地，部分文档与配置仍沿用 TinyShip 命名。
+
 ## 📑 目录
 
 - [🌟 核心特性](#-核心特性)
@@ -17,6 +19,7 @@
 ## 🌟 核心特性
 
 - **双框架支持**：同时支持 Next.js (React) 和 Nuxt.js (Vue)，开发者可根据偏好选择
+  > 注：Benzenith 官网项目使用 Next.js 实现
 - **完整的身份认证**：支持邮箱密码、OAuth（Google、GitHub、微信）、手机短信登录
 - **多种支付集成**：支持 Stripe、微信支付、CREEM 等主流支付平台
 - **国际化支持**：内置多语言系统，轻松支持全球市场
@@ -48,13 +51,14 @@ tinyship/
 │   ├── permissions/      # 权限管理
 │   ├── ui/              # 共享 UI 组件
 │   └── validators/       # 数据验证
+├── openspec/             # 变更规范与提案
 └── docs/                 # 项目文档
 ```
 
 ### 技术栈
 
 **前端框架**
-- Next.js 15 (App Router)
+- Next.js 16 (App Router)
 - Nuxt.js 3
 - TypeScript
 - Tailwind CSS
@@ -125,7 +129,7 @@ pnpm start:docs
 
 ## 🤝 社区与支持
 
-- **问题反馈**：[GitHub Issues](https://github.com/TinyshipCN)
+- **问题反馈**：[GitHub Issues](https://github.com/Rabbit-Ivan/Benzenith-saas/issues)
 
 ---
 

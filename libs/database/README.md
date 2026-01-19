@@ -1,5 +1,7 @@
 # TinyShip 数据库模块
 
+**中文** | [English](./README_EN.md)
+
 这个模块使用 Drizzle ORM 管理与 PostgreSQL 数据库的交互，提供了简单易用的数据访问接口。
 
 ## 使用方法

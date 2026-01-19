@@ -2,7 +2,7 @@
 
 **中文** | [English](./README_EN.md)
 
-![Build Status](https://github.com/vikingmute/tinyship/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://github.com/Rabbit-Ivan/Benzenith-saas/actions/workflows/ci.yml/badge.svg)
 
 ✨ Benzenith 高端珠宝品牌官方网站，基于 Next.js 构建的现代化企业级展示平台。
 
@@ -19,7 +19,8 @@
 
 ## 🏢 关于 Benzenith
 
-Benzenith 是一个高端珠宝品牌，致力于将精湛工艺与现代设计融合。本项目用于品牌展示与会员体系建设，不包含支付功能。
+Benzenith 是一个高端珠宝品牌，致力于将精湛工艺与现代设计融合。本项目用于品牌展示与会员体系建设。
+本项目基于 TinyShip 模板落地，部分文档与配置仍沿用 TinyShip 命名。
 
 ## 🚀 快速开始
 
@@ -39,6 +40,7 @@ tinyship/
 │   │   └── public/        # 静态资源
 │   └── docs-app/          # 文档站点（可选）
 ├── libs/                  # 共享代码库
+├── openspec/              # 变更规范与提案
 └── docs/                  # 项目文档
 ```
 
@@ -53,7 +55,12 @@ tinyship/
 | `/category` | 产品分类 |
 | `/product/[productId]` | 产品详情 |
 | `/news` | 新闻动态 |
+| `/news/[id]` | 新闻详情 |
+| `/news/tag/[tag]` | 新闻标签 |
 | `/contact` | 联系我们 |
+| `/cart` | 购物车 |
+| `/privacy-policy` | 隐私政策 |
+| `/cookie-settings` | Cookie 设置 |
 
 ### 🔐 会员系统
 
@@ -61,9 +68,18 @@ tinyship/
 |------|------|
 | `/signin` | 会员登录 |
 | `/signup` | 会员注册 |
-| `/admin/*` | 内部后台（会员管理） |
 
 > 会员系统的前台页面与后台管理功能，待补充 PRD 后再细化到 README。
+
+### 🛠️ 后台管理
+
+| 路由 | 说明 |
+|------|------|
+| `/admin` | 后台首页 |
+| `/admin/users` | 会员管理 |
+| `/admin/users/[id]` | 会员详情 |
+| `/admin/orders` | 订单管理 |
+| `/admin/subscriptions` | 订阅管理 |
 
 ## ✨ 核心特性
 
@@ -84,7 +100,7 @@ tinyship/
 - 数据分析
 
 ### 🌐 国际化支持
-- 多语言支持（中/繁/英/日）
+- 多语言支持（繁体中文/简体中文/英语/日语）
 - 基于路由的区域化内容
 
 ## 📦 技术栈
@@ -98,8 +114,13 @@ tinyship/
 
 ## 🌐 国际化支持
 
-项目采用路由级国际化设计，统一通过 `[lang]` 进行语言切换，便于全球站点内容管理与扩展。
+项目采用路由级国际化设计，统一通过 `[lang]` 进行语言切换。默认语言为繁体中文，支持简体中文、英语和日语。
 
 ## 📖 开发指南
 
 更多开发说明请参考项目文档：[docs/user-guide/overview.md](./docs/user-guide/overview.md)。
+
+相关文档：
+- [ROADMAP](./ROADMAP.md)
+- [TEST_PLAN](./TEST_PLAN.md)
+- [Docker 部署说明](./Docker-README.md)

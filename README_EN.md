@@ -2,7 +2,7 @@
 
 [中文](./README.md) | **English**
 
-![Build Status](https://github.com/vikingmute/tinyship/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://github.com/Rabbit-Ivan/Benzenith-saas/actions/workflows/ci.yml/badge.svg)
 
 ✨ The official website for Benzenith, a luxury jewelry brand. Built as a modern, enterprise-grade showcase platform with Next.js.
 
@@ -19,7 +19,8 @@
 
 ## 🏢 About Benzenith
 
-Benzenith is a luxury jewelry brand focused on blending fine craftsmanship with modern design. This project powers brand presentation and the membership system, without payment features.
+Benzenith is a luxury jewelry brand focused on blending fine craftsmanship with modern design. This project powers brand presentation and the membership system.
+This project is built on the TinyShip template, and some docs and configs still use TinyShip naming.
 
 ## 🚀 Getting Started
 
@@ -39,6 +40,7 @@ tinyship/
 │   │   └── public/        # Static assets
 │   └── docs-app/          # Documentation site (optional)
 ├── libs/                  # Shared libraries
+├── openspec/              # Change specs and proposals
 └── docs/                  # Project docs
 ```
 
@@ -53,7 +55,12 @@ tinyship/
 | `/category` | Product categories |
 | `/product/[productId]` | Product details |
 | `/news` | News |
+| `/news/[id]` | News details |
+| `/news/tag/[tag]` | News tag |
 | `/contact` | Contact |
+| `/cart` | Shopping cart |
+| `/privacy-policy` | Privacy policy |
+| `/cookie-settings` | Cookie settings |
 
 ### 🔐 Membership System
 
@@ -61,9 +68,18 @@ tinyship/
 |------|------|
 | `/signin` | Member login |
 | `/signup` | Member registration |
-| `/admin/*` | Internal CRM (member management) |
 
 > Membership pages and CRM features will be refined after the PRD update.
+
+### 🛠️ Admin
+
+| Route | Description |
+|------|------|
+| `/admin` | Admin home |
+| `/admin/users` | User management |
+| `/admin/users/[id]` | User details |
+| `/admin/orders` | Order management |
+| `/admin/subscriptions` | Subscription management |
 
 ## ✨ Key Features
 
@@ -84,7 +100,7 @@ tinyship/
 - Data analytics
 
 ### 🌐 Internationalization
-- Multi-language support (ZH/TC/EN/JA)
+- Multi-language support (Traditional Chinese/Simplified Chinese/English/Japanese)
 - Route-based regional content
 
 ## 📦 Tech Stack
@@ -98,8 +114,13 @@ tinyship/
 
 ## 🌐 Internationalization
 
-The project uses route-based i18n, switching languages via `[lang]` to support global content management.
+The project uses route-based i18n, switching languages via `[lang]`. Default language is Traditional Chinese, with support for Simplified Chinese, English, and Japanese.
 
 ## 📖 Development Guide
 
 See project docs for more details: [docs/user-guide/overview.md](./docs/user-guide/overview.md).
+
+Related docs:
+- [ROADMAP](./ROADMAP.md)
+- [TEST_PLAN](./TEST_PLAN.md)
+- [Docker deployment](./Docker-README.md)

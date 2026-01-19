@@ -57,7 +57,8 @@ export const config = {
 - `id`: 计划唯一标识符
 - `amount`: 显示金额
 - `currency`: 币种（微信支付仅支持 CNY）
-- `duration.type`: `one_time`（单次）或 `recurring`（订阅）
+- `duration.type`: `one_time`（单次）、`recurring`（订阅）或 `credits`（积分包）
+- `credits`: 积分包数量（仅 `credits` 类型需要）
 - `stripePriceId`: Stripe 价格 ID（必需，用于实际扣费）
 - `creemProductId`: Creem 产品 ID（必需，用于实际扣费）
 - `i18n`: 多语言显示内容（名称、描述、功能列表）

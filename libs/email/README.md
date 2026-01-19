@@ -1,5 +1,7 @@
 # Email Service
 
+**中文** | [English](./README_EN.md)
+
 这个服务提供了一个统一的邮件发送接口，支持多个邮件服务提供商和国际化邮件模板。目前支持 Resend，计划支持 SendGrid 和 SMTP。
 
 ## 邮件模板系统

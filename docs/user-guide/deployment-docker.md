@@ -2,6 +2,8 @@
 
 本指南介绍如何使用 Docker 容器化部署 TinyShip 项目的 Next.js 和 Nuxt.js 应用。
 
+更完整的 Docker 细节与参数说明请参考根目录的 [Docker-README.md](../../Docker-README.md)。
+
 ## 📑 目录
 
 - [🚀 推荐方式：Docker Compose](#-推荐方式docker-compose)

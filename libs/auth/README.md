@@ -45,7 +45,6 @@ GITHUB_CLIENT_ID="your-github-client-id"
 GITHUB_CLIENT_SECRET="your-github-client-secret"
 
 # 微信 OAuth
-WECHAT_APP_ID="your-wechat-app-id"
 NEXT_PUBLIC_WECHAT_APP_ID="your-wechat-app-id"  # Next.js 客户端需要
 WECHAT_APP_SECRET="your-wechat-app-secret"
 ```

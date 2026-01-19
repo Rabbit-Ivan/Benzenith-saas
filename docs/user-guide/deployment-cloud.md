@@ -8,6 +8,7 @@
   - [Vercel 部署](#vercel-部署)
   - [Netlify 部署](#netlify-部署)
   - [Railway 部署](#railway-部署)
+  - [Zeabur 部署](#zeabur-部署)
 - [🔧 服务器配置](#-服务器配置)
   - [Nginx 反向代理](#nginx-反向代理)
   - [SSL 证书配置](#ssl-证书配置)
@@ -109,6 +110,10 @@
 [env]
   NODE_ENV = "production"
 ```
+
+### Zeabur 部署
+
+项目根目录已提供 `zeabur.yaml` 配置，可直接导入 Zeabur 创建服务，并按需补充环境变量与数据库连接信息。
 
 ## 🔧 服务器配置
 

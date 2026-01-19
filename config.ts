@@ -51,7 +51,7 @@ function requireEnvWithFallback(keys: string[], service: string): string {
 }
 
 
-// 计划类型定义
+// Plan type definitions
 
 type BasePlan = {
   id: string;
@@ -254,7 +254,7 @@ export const config = {
           return requireEnvForService('WECHAT_PAY_API_KEY', 'WeChat Pay');
         },
         get notifyUrl() {
-          // 需要设置成为公网地址，使用内网穿透工具
+          // Must be a public URL; use a tunneling tool for local development.
           return requireEnvForService('WECHAT_PAY_NOTIFY_URL', 'WeChat Pay');
         },
         /**
@@ -378,8 +378,8 @@ export const config = {
           months: 1,
           type: 'recurring'
         },
-        // 当使用 Stripe 支付时，订阅的时长和价格将由 stripePriceId 决定
-        // 这里的 duration 和 amount 仅用于显示和计算，实际订阅周期和价格以 Stripe 后台配置为准
+        // For Stripe, the subscription duration and price are defined by stripePriceId.
+        // duration and amount are display-only; actual billing follows Stripe settings.
         stripePriceId: 'price_1RL2GgDjHLfDWeHDBHjoZaap',
         i18n: {
           'en': {
@@ -871,25 +871,25 @@ export const config = {
      * Cloudflare Turnstile Configuration
      */
     cloudflare: {
-      // 服务端使用的 secret key（用于 better-auth）
+      // Server-side secret key (used by better-auth).
       get secretKey() {
-        // 开发环境fallback到测试key
+        // Fall back to a test key in development.
         if (process.env.NODE_ENV === 'development') {
-          return '1x0000000000000000000000000000000AA'; // 测试用的 siteKey
+          return '1x0000000000000000000000000000000AA'; // Test site key.
         }
         return getEnvForService('TURNSTILE_SECRET_KEY', 'Cloudflare Turnstile');
       },
-      // 客户端使用的 site key（使用 NEXT_PUBLIC_ 前缀）
+      // Client-side site key (with NEXT_PUBLIC_ prefix).
       get siteKey() {
-        // 开发环境fallback到测试key
+        // Fall back to a test key in development.
         if (process.env.NODE_ENV === 'development') {
-          return '1x00000000000000000000AA'; // 测试用的 siteKey
+          return '1x00000000000000000000AA'; // Test site key.
         }
-        // 直接访问 process.env，不通过 getEnv 函数（因为客户端环境下 dotenv 不工作）
+        // Access process.env directly; dotenv is not available on the client.
         const publicKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
         if (publicKey) return publicKey;
 
-        // 生产环境必须配置
+        // Required in production.
         return getEnvForService('TURNSTILE_SITE_KEY', 'Cloudflare Turnstile');
       }
     }

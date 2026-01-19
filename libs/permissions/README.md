@@ -1,5 +1,7 @@
 # TinyShip 权限控制系统
 
+**中文** | [English](./README_EN.md)
+
 这是一个基于 CASL 的权限控制系统，用于 TinyShip 应用中控制用户对不同资源的访问权限。支持 Next.js 和 Nuxt.js 应用。
 
 ## 🏗️ 设计思想
@@ -171,4 +173,3 @@ can(normalUser, Action.CREATE, Subject.REPORT) // ❌ 拒绝
 3. **自定义权限逻辑**: 在 `utils.ts` 的 `can` 函数中添加特殊处理
 
 当前系统设计简单而灵活，可根据业务需求逐步扩展。
-
