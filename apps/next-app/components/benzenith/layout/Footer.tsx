@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-footer-bg text-footer-foreground">
       <div className="container-luxury py-16">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-10 border-b border-white/10">
-          <LocaleLink href="/" className="flex-shrink-0">
+          <LocaleLink href="/" className="flex-shrink-0 mx-auto md:mx-0">
             <picture>
               <source
                 media="(max-width: 768px)"
@@ -27,7 +27,7 @@ export default function Footer() {
               />
             </picture>
           </LocaleLink>
-          <nav className="flex flex-wrap gap-6 md:gap-10">
+          <nav className="flex flex-wrap justify-center md:justify-start gap-6 md:gap-10">
             <LocaleLink
               href="/contact"
               className="text-sm tracking-widest text-footer-foreground hover:text-cream transition-colors uppercase"
@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="text-center">
             <p className="text-sm text-footer-foreground/70">{t("footer.businessCoop")}</p>
           </div>
-          <div className="flex gap-4 md:justify-end">
+          <div className="flex gap-4 justify-center md:justify-end">
             {socialLinks.map(({ label, href, Icon }) => (
               <a
                 key={label}
