@@ -16,8 +16,8 @@ export default function Footer() {
             <picture>
               <source
                 media="(max-width: 768px)"
-                srcSet="/benzenith/assets/footer-logo-mobile.jpg"
-                type="image/jpeg"
+                srcSet="/benzenith/assets/footer-logo-mobile.png"
+                type="image/png"
               />
               <img
                 src="/benzenith/assets/footer-logo.png"
