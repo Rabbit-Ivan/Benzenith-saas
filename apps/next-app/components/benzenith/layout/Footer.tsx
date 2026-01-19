@@ -40,9 +40,6 @@ export default function Footer() {
             >
               {t("footer.cookieSettings")}
             </LocaleLink>
-            <span className="text-sm tracking-widest text-footer-foreground uppercase cursor-default">
-              {t("footer.followUs")}
-            </span>
           </nav>
         </div>
 

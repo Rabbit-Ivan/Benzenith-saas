@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
-import { Instagram, X as XIcon, Youtube } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
 
 export type SocialLink = {
   label: string;
@@ -25,6 +25,16 @@ const WeiboIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+// Custom X (Twitter) icon using official X logo
+const XTwitterIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <path
+      fill="currentColor"
+      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+    />
+  </svg>
+);
+
 export const socialLinks: SocialLink[] = [
   {
     label: "Xiaohongshu",
@@ -33,8 +43,8 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "X",
-    href: "https://x.com/benzenithjoa?s=21",
-    Icon: XIcon,
+    href: "https://x.com/benzenithglobal?s=21",
+    Icon: XTwitterIcon,
   },
   {
     label: "Instagram",
