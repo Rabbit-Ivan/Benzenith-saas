@@ -1,6 +1,14 @@
 import { use } from 'react';
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Logo } from "@/components/ui/logo";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function AuthLayout({
   children,
