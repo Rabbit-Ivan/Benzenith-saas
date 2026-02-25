@@ -19,7 +19,7 @@ out
 .env*.local
 
 # 日志
-logs
+/logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -61,15 +61,26 @@ docker-volumes/
 # 临时文件
 .tmp
 .temp
-.xuqiu-prd
-openspec
+.openspec/
+.sisyphus/
+.tmp/
 
 # AI 工具配置
+.agent/
 .claude/
 .cursor/
+.codex/
+.opencode/
 
 # Python 虚拟环境
 .venv-tools/
+
+# xuqiu-prd: 仅跟踪文档与 HTML 原型
+.xuqiu-prd/**
+!.xuqiu-prd/**/
+!.xuqiu-prd/**/*.md
+!.xuqiu-prd/**/*.html
+.xuqiu-prd/.venv/
 
 # Zeabur 部署缓存
 .zeabur/
