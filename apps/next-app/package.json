@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --port 7001",
     "build": "next build --webpack",
-    "start": "NODE_ENV=production next start --port 7001"
+    "start": "NODE_ENV=production node .next/standalone/apps/next-app/server.js"
   },
   "dependencies": {
     "@ai-sdk/react": "2.0.72",
