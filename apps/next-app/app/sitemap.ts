@@ -1,106 +1,72 @@
 import type { MetadataRoute } from "next";
 
+import { locales } from "@libs/i18n";
 import { getNewsArticleIds } from "@/lib/benzenith-news";
-import { i18n } from "./i18n-config";
 
-export const revalidate = 3600;
-
-const staticLastModified = new Date("2026-02-25T00:00:00.000Z");
-
-const staticRouteConfigs: Array<{
-  path: string;
-  changeFrequency: "weekly" | "monthly";
-  priority: number;
-}> = [
-  { path: "", changeFrequency: "weekly", priority: 1 },
-  { path: "/brand-story", changeFrequency: "monthly", priority: 0.5 },
-  { path: "/contact", changeFrequency: "monthly", priority: 0.5 },
-  { path: "/privacy-policy", changeFrequency: "monthly", priority: 0.5 },
-  { path: "/cookie-settings", changeFrequency: "monthly", priority: 0.5 },
-  { path: "/news", changeFrequency: "weekly", priority: 0.6 },
-];
-
-const categoryIds = ["suixinshan", "benzizai", "tingwanxiang"] as const;
-
-const productIds = [
+const staticPaths = ["", "/brand-story", "/contact", "/privacy-policy", "/news"];
+const categorySlugs = ["fanofwill", "suchnessofself"];
+const productSlugs = [
   "mother-of-pearl-necklace",
   "mother-of-pearl-earrings",
   "hetian-jade-necklace",
   "blue-water-jadeite-necklace",
-] as const;
+];
 
-const newsPublishedDateById: Record<number, string> = {
-  1: "2025-01-10",
-  2: "2025-01-05",
-  3: "2024-12-28",
-  4: "2024-12-20",
-  5: "2024-12-15",
-  6: "2024-12-08",
+const resolveAppBaseUrl = () => {
+  const rawValue = process.env.APP_BASE_URL?.trim();
+  if (!rawValue) return "http://localhost:7001";
+  const withProtocol = /^https?:\/\//i.test(rawValue)
+    ? rawValue
+    : `https://${rawValue}`;
+  return withProtocol.replace(/\/+$/, "");
 };
 
-const normalizeBaseUrl = (baseUrl: string) => {
-  return baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
-};
+const buildUrl = (baseUrl: string, locale: string, path: string) =>
+  `${baseUrl}/${locale}${path}`;
 
-const createLocalizedUrl = (baseUrl: string, locale: string, path: string) => {
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return `${baseUrl}/${locale}${normalizedPath === "/" ? "" : normalizedPath}`;
-};
-
-const resolveNewsLastModified = (id: string) => {
-  const parsedId = Number(id);
-  if (Number.isNaN(parsedId)) return staticLastModified;
-
-  const publishedDate = newsPublishedDateById[parsedId];
-  if (!publishedDate) return staticLastModified;
-
-  return new Date(`${publishedDate}T00:00:00.000Z`);
-};
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = normalizeBaseUrl(process.env.APP_BASE_URL || "http://localhost:7001");
-  const locales = i18n.locales as readonly string[];
-  const newsIds = getNewsArticleIds().map((id) => String(id));
-
-  const routes: MetadataRoute.Sitemap = [];
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = resolveAppBaseUrl();
+  const now = new Date();
+  const articleIds = getNewsArticleIds();
+  const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {
-    for (const routeConfig of staticRouteConfigs) {
-      routes.push({
-        url: createLocalizedUrl(baseUrl, locale, routeConfig.path),
-        lastModified: staticLastModified,
-        changeFrequency: routeConfig.changeFrequency,
-        priority: routeConfig.priority,
+    for (const path of staticPaths) {
+      entries.push({
+        url: buildUrl(baseUrl, locale, path),
+        lastModified: now,
+        changeFrequency: path === "" ? "weekly" : "monthly",
+        priority: path === "" ? 1 : path === "/news" ? 0.9 : 0.8,
       });
     }
 
-    for (const categoryId of categoryIds) {
-      routes.push({
-        url: createLocalizedUrl(baseUrl, locale, `/category/${categoryId}`),
-        lastModified: staticLastModified,
+    for (const categorySlug of categorySlugs) {
+      entries.push({
+        url: buildUrl(baseUrl, locale, `/category/${categorySlug}`),
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.8,
+      });
+    }
+
+    for (const productSlug of productSlugs) {
+      entries.push({
+        url: buildUrl(baseUrl, locale, `/product/${productSlug}`),
+        lastModified: now,
         changeFrequency: "monthly",
-        priority: 0.6,
+        priority: 0.7,
       });
     }
 
-    for (const productId of productIds) {
-      routes.push({
-        url: createLocalizedUrl(baseUrl, locale, `/product/${productId}`),
-        lastModified: staticLastModified,
-        changeFrequency: "weekly",
-        priority: 0.8,
-      });
-    }
-
-    for (const newsId of newsIds) {
-      routes.push({
-        url: createLocalizedUrl(baseUrl, locale, `/news/${newsId}`),
-        lastModified: resolveNewsLastModified(newsId),
-        changeFrequency: "weekly",
-        priority: 0.8,
+    for (const articleId of articleIds) {
+      entries.push({
+        url: buildUrl(baseUrl, locale, `/news/${articleId}`),
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
       });
     }
   }
 
-  return routes;
+  return entries;
 }
