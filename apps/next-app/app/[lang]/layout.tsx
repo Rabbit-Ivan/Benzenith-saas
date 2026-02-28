@@ -22,6 +22,13 @@ const metadataByLocale: Record<
   },
 };
 
+const resolveAppBaseUrl = () => {
+  const rawValue = process.env.APP_BASE_URL?.trim();
+  if (!rawValue) return "http://localhost:7001";
+  if (/^https?:\/\//i.test(rawValue)) return rawValue;
+  return `https://${rawValue}`;
+};
+
 export async function generateViewport({ params }: { params: Promise<{ lang: string }> }): Promise<Viewport> {
   return {
     themeColor: "#0b0b0b",
@@ -33,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const metadata = metadataByLocale[lang] || metadataByLocale.en;
   
   return {
-    metadataBase: new URL(process.env.APP_BASE_URL || 'http://localhost:7001'),
+    metadataBase: new URL(resolveAppBaseUrl()),
     title: metadata.title,
     description: metadata.description,
     icons: {

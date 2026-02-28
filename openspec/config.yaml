@@ -1,0 +1,28 @@
+schema: spec-driven
+context: |
+  语言：中文（简体）
+  所有产出物必须使用简体中文撰写。
+  术语策略：
+  - 首次出现采用“中文（English）”，后续保持同一写法。
+  - 以下技术术语保持英文原文：API、REST、GraphQL、JWT、OAuth、RBAC、Session、Access Token、Refresh Token。
+  - 代码标识符、命令、路径、环境变量一律保持英文。
+  认证域约束：
+  - 涉及登录、注册、权限控制的变更，必须覆盖身份验证、会话管理、授权边界、异常处理与安全审计。
+  项目栈：
+  - Next.js 15（App Router）+ TypeScript + Tailwind CSS
+  - Better-Auth + PostgreSQL + Drizzle ORM
+  - Monorepo 结构：apps/ + libs/
+rules:
+  proposal:
+    - 使用简体中文撰写，结构至少包含：背景、目标、范围、非目标、影响面、风险与回滚方案。
+    - 涉及认证的 proposal 必须明确受影响角色、受保护资源与失败回退策略。
+  design:
+    - 设计文档必须包含认证流程步骤，覆盖登录成功、登录失败、会话过期刷新、权限拒绝。
+    - 必须明确会话策略（过期时间、续期策略、失效机制）与审计日志方案。
+  specs:
+    - 需求条目使用 Given/When/Then 格式。
+    - 涉及术语时遵循 docs/glossary.zh-CN.md；若词表缺失，先补词表再定稿。
+    - 涉及认证的 specs 至少包含成功路径、失败路径、越权访问三个场景。
+  tasks:
+    - 任务拆分需可独立验证，每项任务包含明确输出与验收标准。
+    - 认证相关任务必须单独列出安全校验与回归测试任务。
