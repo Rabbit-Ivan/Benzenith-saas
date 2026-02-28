@@ -226,6 +226,36 @@ export default function HomePageClient() {
             {t("home.philosophyText")}
           </h2>
         </div>
+        <div className="absolute bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 z-20 flex items-center gap-6 md:gap-8">
+          <a
+            href="https://cb8kzv8hv-hlredfvhu4twothjoig.taobao.com/search.htm?spm=a1z10.1-c-s.w5002-25961343078.1.596b7b22DcGCMm&search=y"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-block transition-opacity duration-300 hover:opacity-70"
+          >
+            <img
+              src="/benzenith/assets/icon-taobao.png"
+              alt="淘宝"
+              className="w-[100px] h-[34px] md:w-[130px] md:h-[45px] object-contain"
+              loading="lazy"
+            />
+            <span className="block h-px w-0 bg-cream/80 transition-all duration-300 group-hover:w-full mx-auto" />
+          </a>
+          <a
+            href="https://www.benzenith.shop/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-block transition-opacity duration-300 hover:opacity-70"
+          >
+            <img
+              src="/benzenith/assets/icon-shopify.png"
+              alt="Shopify"
+              className="w-[100px] h-[34px] md:w-[130px] md:h-[45px] object-contain"
+              loading="lazy"
+            />
+            <span className="block h-px w-0 bg-cream/80 transition-all duration-300 group-hover:w-full mx-auto" />
+          </a>
+        </div>
       </section>
     </Layout>
   );
