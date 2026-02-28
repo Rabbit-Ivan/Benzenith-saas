@@ -7,7 +7,7 @@ min_instances: 1
 # Health check configuration
 health_check:
   enabled: true
-  path: /
+  path: /robots.txt
   interval: 30
   timeout: 10
 
