@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 
 import "../globals.css";
 import { i18n } from '../i18n-config';
-import { use } from 'react';
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeScript } from "@/components/theme-script";
@@ -97,14 +96,14 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: Promise<{ lang: string }>;
 }) {
-  const { lang } = use(params);
+  const { lang } = await params;
   
   return (
     <html lang={lang} className={fontVariables} suppressHydrationWarning>
