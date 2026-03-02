@@ -15,7 +15,3 @@ health_check:
 resources:
   cpu: 0.5
   memory: 512
-
-# Environment variables
-env:
-  NODE_ENV: production
