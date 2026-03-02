@@ -7,6 +7,11 @@
     "node": ">=22.0.0"
   },
   "packageManager": "pnpm@9.4.0",
+  "pnpm": {
+    "overrides": {
+      "baseline-browser-mapping": "2.10.0"
+    }
+  },
   "scripts": {
     "build": "pnpm run build:next",
     "start": "pnpm run start:next",
@@ -46,6 +51,7 @@
     "@types/node": "^22.16.0",
     "@types/pg": "8.15.4",
     "@vitest/ui": "3.0.9",
+    "baseline-browser-mapping": "2.10.0",
     "drizzle-kit": "0.30.5",
     "turbo": "^1.11.2",
     "typescript": "^5.8.3",
