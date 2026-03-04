@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack --port 7001",
     "build": "next build --webpack",
-    "start": "NODE_ENV=production node .next/standalone/apps/next-app/server.js"
+    "start": "NODE_ENV=production sh -c 'rm -rf .next/standalone/apps/next-app/.next/static .next/standalone/apps/next-app/public && mkdir -p .next/standalone/apps/next-app/.next && cp -R .next/static .next/standalone/apps/next-app/.next/static && cp -R public .next/standalone/apps/next-app/public && node .next/standalone/apps/next-app/server.js'"
   },
   "dependencies": {
     "@ai-sdk/react": "2.0.72",
